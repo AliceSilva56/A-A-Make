@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/Logo.png" type="image/png">
+    <link rel="icon" href="assets/img/Logo.bmp" type="image/png">
     <link rel="stylesheet" href="assets/css/estilo-produtos.css">
     <title>A&A Make Produtos</title>
 </head>
@@ -20,28 +20,28 @@
             <!-- Menu de navegação -->
             <nav>
                 <ul id="menuItens">
-                    <li><a href="tela_principal.html">Home</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contatos.html">Contato</a></li>
-                    <li class="dropdown">
-                        <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
-                        <ul class="dropdown-content">
-                            <li><a href="#" onclick="filterProducts('all')">Todos</a></li>
-                            <li><a href="#" onclick="filterProducts('rosto')">Rosto</a></li>
-                            <li><a href="#" onclick="filterProducts('olhos')">Olhos</a></li>
-                            <li><a href="#" onclick="filterProducts('labios')">Lábios</a></li>
-                            <li><a href="#" onclick="filterProducts('acessorios')">Acessórios</a></li>
-                        </ul>
-                    </li>
-                    <!-- Carrinho -->
-                    <li class="cart-icon">
-                        <a href="#" onclick="toggleCart()">🛒</a>
-                        <div id="cart" class="cart">
-                            <ul id="cartItems"></ul>
-                        </div>
-                    </li>
+                  <li><a href="tela_principal.html">Home</a></li>
+                  <li><a href="produtos.html">Produtos</a></li>
+                  <li><a href="contatos.html">Contato</a></li>
+                  <li class="dropdown">
+                    <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
+                    <ul class="dropdown-content">
+                      <li><a href="produtos.html?category=all">Todos</a></li>
+                      <li><a href="produtos.html?category=rosto">Rosto</a></li>
+                      <li><a href="produtos.html?category=olhos">Olhos</a></li>
+                      <li><a href="produtos.html?category=labios">Lábios</a></li>
+                      <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
+                    </ul>
+                  </li>
+                  <!-- Carrinho -->
+                  <li class="cart-icon">
+                    <a href="carrinho.html" onclick="toggleCart()">🛒</a>
+                    <div id="cart" class="cart">
+                      <ul id="cartItems"></ul>
+                    </div>
+                  </li>
                 </ul>
-            </nav>
+              </nav>
         </div>
 
         <div class="container">

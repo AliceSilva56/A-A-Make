@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/Logo.bmp" type="image/png">
+    <link rel="stylesheet" href="assets/css/estilo-carrinho.css">
+    <title>A&A Make Carrinho</title>
+</head>
+<body>
+    <div class="banner">
+
+        <div class="navebar">
+            <div class="logo">
+                <img src="assets/img/Logo.bmp" alt="Logo" width="90px">
+            </div>
+
+            <!-- Menu de navegação -->
+            <nav>
+                <ul id="menuItens">
+                  <li><a href="tela_principal.html">Home</a></li>
+                  <li><a href="produtos.html">Produtos</a></li>
+                  <li><a href="contatos.html">Contato</a></li>
+                  <li class="dropdown">
+                    <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
+                    <ul class="dropdown-content">
+                      <li><a href="produtos.html?category=all">Todos</a></li>
+                      <li><a href="produtos.html?category=rosto">Rosto</a></li>
+                      <li><a href="produtos.html?category=olhos">Olhos</a></li>
+                      <li><a href="produtos.html?category=labios">Lábios</a></li>
+                      <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+
+        <div class="container">
+            <h1>Bem-vindo ao seu carrinho!</h1>
+            <h2>Comece ou finalize sua compra</h2>
+
+            <!-- Card de resumo do carrinho -->
+            <div class="card">
+                <h3>Resumo do Carrinho</h3>
+                <p>Confira os produtos adicionados ao carrinho e finalize sua compra.</p>
+
+                <!-- Lista de produtos no carrinho -->
+                <div id="cartItemsContainer">
+                    <!-- Os itens do carrinho serão adicionados dinamicamente aqui -->
+                </div>
+
+                <!-- Total e forma de pagamento -->
+                <div class="checkout">
+                    <h3>Total: <span id="totalPrice">R$ 0,00</span></h3>
+                    <h3>Forma de pagamento:</h3>
+                    <div class="payment-options">
+                        <label>
+                            <input type="radio" name="payment" value="boleto"> Boleto
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="pix"> Pix
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="especie"> Espécie
+                        </label>
+                    </div>
+                    <button id="finalizeButton" class="finalize-button">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Exemplo de produtos no carrinho
+            const cartItems = [
+                {
+                    image: "assets/img/base-rosto.png",
+                    name: "Base para Rosto",
+                    price: 20.00
+                },
+                {
+                    image: "assets/img/corretivo-primer-rosto.png",
+                    name: "Corretivo e Primer",
+                    price: 20.00
+                }
+            ];
+
+            // Função para renderizar os itens do carrinho
+            function renderCartItems() {
+                const cartItemsContainer = document.getElementById("cartItemsContainer");
+                const totalPriceElement = document.getElementById("totalPrice");
+                let total = 0;
+
+                cartItems.forEach(item => {
+                    const itemElement = document.createElement("div");
+                    itemElement.classList.add("cart-item");
+                    itemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>R$ ${item.price.toFixed(2)}</p>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                    total += item.price;
+                });
+
+                totalPriceElement.textContent = `R$ ${total.toFixed(2)}`;
+            }
+
+            // Inicializa o carrinho
+            renderCartItems();
+
+            // Evento para finalizar a compra
+            document.getElementById("finalizeButton").addEventListener("click", () => {
+                const selectedPayment = document.querySelector('input[name="payment"]:checked');
+                if (!selectedPayment) {
+                    alert("Por favor, selecione uma forma de pagamento.");
+                    return;
+                }
+                alert(`Compra finalizada com sucesso! Forma de pagamento: ${selectedPayment.value}`);
+            });
+        </script>
+    </div>
+</body>
+</html>
