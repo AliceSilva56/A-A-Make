@@ -1,0 +1,40 @@
+<!-- Tela de login -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/Logo.png" type="image/png"> <!-- Adicionando o favicon -->
+    <link rel="stylesheet" href="assets/css/estilo-login.css"> <!-- Referenciando o arquivo CSS -->
+    <title>A&A Make</title>
+    <script src="assets/script/script_login.js" defer></script> <!-- Referenciando o arquivo JavaScript -->
+    
+</head>
+<body>
+    <div class="login-container">
+        <img src="assets/img/Logo.png" alt="Logo"> <!-- Logo acima do título -->
+
+        <h3 id="title"> Seja bem-vindo!</h3>
+        <h3 id="subtitle">Faça seu Login</h3>
+
+        <input type="text" placeholder="Username" required>
+        <div id="username-error" style="color: red; font-size: 11px;"></div> <!-- Mensagem de erro para o username -->
+        <input type="password" placeholder="Password" required>
+        <div id="password-error" style="color: red; font-size: 12px;"></div> <!-- Mensagem de erro para a senha -->
+        <div class="remember-me">
+            <div class="checkbox-container">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Lembrar-me</label>
+            </div>
+            <a href="#" class="option-link">Esqueci minha senha</a>
+        </div>
+
+        
+        <button type="button" onclick="login()">Entrar</button> <!-- Chama a função de login -->
+        <a href="registra.html" class="option-link create-account">Criar conta</a>
+
+       
+    </div>
+
+</body>
+</html>

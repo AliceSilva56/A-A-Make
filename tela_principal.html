@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/img/Logo.png" type="image/png"> <!-- Adicionando o favicon -->
+  <link rel="stylesheet" href="assets/css/estilo-tela_principal.css"> <!-- Reutilizando o estilo do login -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Adicionando Font Awesome -->
+
+  <title>Tela Principal - A&A Make</title>
+
+</head>
+
+<body>
+  <!--Inicio baneer-->
+
+  <div class="banner">
+
+    <div class="navebar">
+<div class="logo">
+    <img src="assets/img/logo.png" alt="Logo" width="90px">
+</div>
+
+<!-- Menu de navegação -->
+<nav>
+    <ul id="menuItens">
+        <li><a href="tela_principal.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Categorias &#x2228;</a>
+            <ul class="dropdown-content">
+                <li><a href="olhos.html">Olhos</a></li>
+                <li><a href="rosto.html">Rosto</a></li>
+                <li><a href="labios.html">Lábios</a></li>
+                <li><a href="acessorios.html">Acessórios</a></li>
+            </ul>
+        </li>
+        <!-- Carrinho -->
+        <li class="cart-icon">
+            <a href="#" onclick="toggleCart()">🛒</a>
+            <div id="cart" class="cart">
+                <ul id="cartItems"></ul>
+            </div>
+        </li>
+    </ul>
+</nav>
+</div>
+
+    <!--Inicio do container-->
+    <div class="container">
+
+      <!--Inicio do texto do banner -->
+      <div class="linha">
+
+        <div class="col-2">
+          <h1>Seja bem-vindo a nossa loja virtual</h1>
+          <p>Compre os melhores produtos com os melhores preços</p><br>
+          <a href="#" class="btn">Explore agora &#8594;</a>
+        </div>
+
+        <div class="col-2">
+          <img src="assets/img/banner1.png" alt="Banner">
+        </div>
+
+
+        <!--Inicio corpo categorias em destaque -->
+        <div class="categorias">
+
+          <!--Inicio linha do corpo categorias em destaque -->
+          <div class="corpo-categorias">
+
+            <h2>Categorias em destaque</h2>
+
+            <div class="linha">
+
+
+              <div class=" col-3">
+                <img src="assets/img/categoria1.png" alt="Categorialabios">
+              </div>
+
+              <div class=" col-3">
+                <img src="assets/img/categoria2.png" alt="CategoriaOlhos">
+              </div>
+
+              <div class=" col-3">
+                <img src="assets/img/categoria3.png" alt="CategoriaRosto">
+              </div>
+
+              <div class=" col-3">
+                <img src="assets/img/categoria4.png" alt="CategoriaAcessorios">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div> <!--Inicio corpo categorias em destaque -->
+    </div>
+  </div>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <script>
+    // Alterna a exibição do menu suspenso ao clicar no botão
+    document.querySelector('.dropbtn').addEventListener('click', function (e) {
+      e.preventDefault(); // Evita o comportamento padrão do link
+      const dropdownContent = document.querySelector('.dropdown-content');
+      dropdownContent.style.display =
+        dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Fecha o menu suspenso ao clicar fora dele
+    window.addEventListener('click', function (e) {
+      const dropdown = document.querySelector('.dropdown');
+      if (!dropdown.contains(e.target)) {
+        document.querySelector('.dropdown-content').style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+
+<!--By: Alice &#x2766;-->
+
+</html>
+
+</body>
+
+</html>

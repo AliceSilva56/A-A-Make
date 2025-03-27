@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d4b5b6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 25px;
+  margin-bottom: 20px;
+  
+}
+
+footer.support-info {
+  background-color: #d4b5b6; /* Cor de fundo */
+  color: #000; /* Cor do texto */
+  padding: 20px 0; /* Espaçamento interno */
+  text-align: center; /* Centraliza o conteúdo */
+  width: 100%; /* Ocupa toda a largura */
+}
+
+footer.support-info ul {
+  list-style: none; /* Remove os marcadores da lista */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Exibe os itens em linha */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 20px; /* Espaçamento entre os ícones */
+}
+
+footer.support-info li {
+  display: inline-block; /* Exibe os itens em linha */
+}
+
+footer.support-info a {
+  color: #000; /* Cor dos ícones */
+  font-size: 24px; /* Tamanho dos ícones */
+  text-decoration: none; /* Remove o sublinhado */
+  transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+footer.support-info a:hover {
+  color: #e63946; /* Cor ao passar o mouse */
+}
+
+.feedback-form {
+  background-color: #fff;
+  padding: 31px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+textarea {
+  resize: none;
+  /* Remove a opção de redimensionar a caixa de texto */
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  /* Tamanho da fonte */
+}
+
+.feedback-form button {
+  background-color: #e7cd81;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.feedback-form button:hover {
+  transform: scale(1.05);
+  /* Aumenta o botão em 5% ao passar o mouse */
+}
+
+.stars {
+  display: flex;
+  /* Exibe as estrelas em linha */
+  flex-direction: row;
+  /* Garante que as estrelas sejam exibidas da esquerda para a direita */
+  justify-content: flex-start;
+  /* Alinha as estrelas à esquerda */
+  gap: 5px;
+  /* Espaçamento entre as estrelas */
+  margin-bottom: 20px;
+  /* Espaçamento inferior */
+}
+
+.stars input {
+  display: none;
+  /* Oculta os inputs de rádio */
+}
+
+.stars label {
+  font-size: 24px;
+  /* Tamanho das estrelas */
+  color: #ddd;
+  /* Cor padrão das estrelas */
+  cursor: pointer;
+  /* Cursor de ponteiro ao passar o mouse */
+  transition: color 0.2s ease-in-out;
+  /* Animação de transição da cor */
+}
+
+.stars label.filled {
+  color: #ffff00;
+  /* Cor das estrelas preenchidas */
+}
+
+.success-message {
+  display: none;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.navebar {
+  display: flex; /* exibe os elementos em linha */
+  align-items: center; /* alinhamento vertical */
+  padding: 10px; /* espaçamento interno */
+  background-color: #ffffff; /* cor de fundo */
+  width: 100%; /* ocupa toda a largura da tela */
+  margin: 0; /* remove margens */
+}
+
+/*.logo {
+ position: absolute;
+ top: 20px; 
+} */
+
+nav {
+  flex: 1; /* ocupa todo o espaço disponível */
+  text-align: right; /* alinhamento do menu a direita */
+  margin-right: 70px;
+}
+
+nav ul {
+  display: inline-block; /* exibe os itens em linha */
+  list-style-type: none; /* remove a bolinha da lista */
+}
+
+nav ul li {
+  display: inline-block; /* elementos em linha */
+  margin-right: 20px; /* espaçamento entre elementos */
+}
+
+nav ul li a {
+  text-decoration: none; /* remove o sublinhado do link */
+  color: #000000; /* cor do texto */
+}
+
+nav ul li a:hover {
+  color: #e7cd81; /* Define a cor ao passar o mouse sobre o link */
+}
+
+/* Estilo do dropdown */
+.dropdown {
+  position: relative; /* Define a posição relativa para o dropdown */
+  display: inline-block; /* Exibe o item em linha */
+}
+
+.dropbtn {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #000; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno */
+  display: inline-block; /* Exibe o botão em linha */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+}
+
+.dropdown-content {
+  display: none; /* Oculta o menu suspenso por padrão */
+  position: absolute; /* Posiciona o menu abaixo do botão */
+  background-color: #fff; /* Cor de fundo */
+  min-width: 150px; /* Largura mínima */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 1; /* Garante que o menu fique acima de outros elementos */
+}
+
+.dropdown-content li {
+  list-style: none; /* Remove os marcadores da lista */
+}
+
+.dropdown-content a {
+  color: #000; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: block; /* Exibe os itens como blocos */
+}
+
+.dropdown-content a:hover {
+  color: #e7cd81;
+}
+
+/* Exibe o menu suspenso ao passar o mouse */
+.dropdown:hover .dropdown-content {
+  display: block; /* Exibe o menu suspenso */
+}
+
+/* Estilo do carrinho */
+.cart-icon {
+  position: relative;
+}
+
+.cart {
+  display: none; /* Oculta o carrinho por padrão, ele só será exibido quando necessário */
+  position: absolute; /* Posiciona o carrinho em relação ao elemento pai mais próximo com posição relativa */
+  top: 40px; /* Define a distância do carrinho em relação ao topo do elemento pai */
+  right: 0; /* Alinha o carrinho à direita do elemento pai */
+  border: 1px solid #ddd; /* Adiciona uma borda cinza clara ao redor do carrinho */
+}
+
+.cart h2 {
+  margin: 0 0 10px;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart ul li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}

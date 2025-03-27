@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/Logo.png" type="image/png"> <!-- Adicionando o favicon -->
+    <link rel="stylesheet" href="assets/css/estilo-registro.css"> <!-- Reutilizando o estilo do registro -->
+    <title>Registrar - A&A Make</title>
+   
+</head>
+
+<body>
+    <div class="login-container">
+        <img src="assets/img/Logo.png" alt="Logo"> <!-- Logo acima do título -->
+        
+            <h3 id="subtitle">Seja bem-vindo(a) A&A Make!</h3>
+            <h3 id="title">Crie sua Conta</h3>
+
+        <input id="name" type="text" placeholder="Nome completo" required>
+        <div id="name-error" style="color: red;"></div>
+
+        <input id="email" type="email" placeholder="Email" required>
+        <div id="email-error" style="color: red;"></div>
+
+        <input id="username" type="text" placeholder="Username" required>
+        <div id="username-error" style="color: red;"></div>
+
+        <input id="password" type="password" placeholder="Senha" required>
+        <div id="password-error" style="color: red;"></div>
+
+        <input id="confirm-password" type="password" placeholder="Confirmar senha" required>
+        <div id="confirm-password-error" style="color: red;"></div>
+
+        <div id="success-message" style="color: #e7cd81;"></div> <!-- Mensagem de sucesso -->
+        <button type="button" onclick="registrar()">Registrar</button> <!-- Chama a função de registro -->
+
+        
+        <a href="index.html" class="option-link">Já tem uma conta? Faça login</a>
+    </div>
+
+    <script src="assets/script/script_registra.js"></script>
+</body>
+</html>

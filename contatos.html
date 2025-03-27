@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/estilo-contatos.css">
+  <link rel="icon" href="assets/img/Logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/estilo-contatos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Contato - A&A Make</title>
+  <style>
+    
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+
+    <div class="navebar">
+<div class="logo">
+    <img src="assets/img/logo.png" alt="Logo" width="90px">
+</div>
+
+<!-- Menu de navegação -->
+<nav>
+    <ul id="menuItens">
+        <li><a href="tela_principal.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Categorias &#x2228;</a>
+            <ul class="dropdown-content">
+                <li><a href="olhos.html">Olhos</a></li>
+                <li><a href="rosto.html">Rosto</a></li>
+                <li><a href="labios.html">Lábios</a></li>
+                <li><a href="acessorios.html">Acessórios</a></li>
+            </ul>
+        </li>
+        <!-- Carrinho -->
+        <li class="cart-icon">
+            <a href="#" onclick="toggleCart()">🛒</a>
+            <div id="cart" class="cart">
+                <ul id="cartItems"></ul>
+            </div>
+        </li>
+    </ul>
+</nav>
+</div>
+  <div class="container">
+    
+    <h1>Contato e Suporte</h1>   
+
+    <div class="feedback-form">
+      <h2>Envie seu Feedback</h2>
+      <form id="feedbackForm">
+        <label for="name">Nome (opcional):</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome">
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="5" placeholder="Escreva seu feedback aqui..." required></textarea>
+
+      <label>Classificação:</label>
+        <div class="stars">
+          <input type="radio" id="star5" name="rating" value="5">
+          <label for="star5">&#9733;</label>
+        
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4">&#9733;</label>
+        
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3">&#9733;</label>
+        
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2">&#9733;</label>
+        
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1">&#9733;</label>
+        </div>
+
+        <button type="submit">Enviar Feedback</button>
+      </form>
+      <p class="success-message" id="successMessage">Seu feedback foi enviado com sucesso!</p>
+    </div>
+
+                <footer class="support-info">
+          <ul>
+            <li>
+              <a href="mailto:aura&amor@loja.com" target="_blank" title="Enviar Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+557512345678" target="_blank" title="Ligar para o telefone">
+                <i class="fas fa-phone"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/A&AMake" target="_blank" title="Visitar o Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.google.com/maps/search/A%26AMake+-+Avenidas+das+cores,+Travessa+do+blush,+N°1500,+44092-676/@-12.3081105,-38.9538514,16.75z?entry=ttu&g_ep=EgoyMDI1MDMxOS4xIKXMDSoASAFQAw%3D%3D" target="_blank" title="Ver localização no Google Maps">
+                <i class="fas fa-map-marker-alt"></i>
+              </a>
+            </li>
+          </ul>
+        </footer>
+
+  </div>
+</div>
+  
+
+   <script>
+ 
+  // Script para exibir a mensagem de sucesso
+  const form = document.getElementById('feedbackForm');
+  const successMessage = document.getElementById('successMessage');
+  const stars = document.querySelectorAll('.stars label');
+  const inputs = document.querySelectorAll('.stars input');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    successMessage.style.display = 'block'; // Exibe a mensagem
+    form.reset(); // Reseta o formulário
+
+    // Remove o preenchimento das estrelas
+    stars.forEach((star) => star.classList.remove('filled'));
+    inputs.forEach((input) => (input.checked = false)); // Desmarca os inputs de rádio
+
+    // Define um temporizador para ocultar a mensagem após 5 segundos
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 1000); // 1000 milissegundos = 1 segundos
+  });
+
+  stars.forEach((star, index) => {
+    // Evento de hover para preencher as estrelas ao passar o mouse
+    star.addEventListener('mouseover', () => {
+      stars.forEach((s, i) => {
+        if (i <= index) {
+          s.classList.add('filled');
+        } else {
+          s.classList.remove('filled');
+        }
+      });
+    });
+
+    // Remove o preenchimento ao sair do hover
+    star.addEventListener('mouseout', () => {
+      stars.forEach((s) => s.classList.remove('filled'));
+      // Mantém as estrelas preenchidas após o clique
+      const selected = document.querySelector('.stars input:checked');
+      if (selected) {
+        const selectedIndex = Array.from(inputs).indexOf(selected);
+        stars.forEach((s, i) => {
+          if (i <= selectedIndex) {
+            s.classList.add('filled');
+          }
+        });
+      }
+    });
+
+    // Evento de clique para selecionar a avaliação
+    star.addEventListener('click', () => {
+      inputs[index].checked = true; // Marca o input correspondente
+      stars.forEach((s, i) => {
+        if (i <= index) {
+          s.classList.add('filled');
+        } else {
+          s.classList.remove('filled');
+        }
+      });
+    });
+  });
+
+  // Alterna a exibição do menu suspenso ao clicar no botão
+  document.querySelector('.dropbtn').addEventListener('click', function (e) {
+    e.preventDefault(); // Evita o comportamento padrão do link
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.style.display =
+      dropdownContent.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Fecha o menu suspenso ao clicar fora dele
+  window.addEventListener('click', function (e) {
+    const dropdown = document.querySelector('.dropdown');
+    if (!dropdown.contains(e.target)) {
+      document.querySelector('.dropdown-content').style.display = 'none';
+    }
+  });
+  </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

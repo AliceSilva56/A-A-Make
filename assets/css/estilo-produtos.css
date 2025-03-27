@@ -1,0 +1,261 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove margens e preenchimentos padrão */
+  box-sizing: border-box; /* Inclui o modelo de caixa para todos os elementos */
+}
+
+
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove margens e preenchimentos padrão */
+    background-color: #d4b5b6; /* Cor de fundo */
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins importada do Google Fonts */
+}
+
+.container {
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.product {
+    border: 1px solid #ddd; /* Borda cinza clara */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    margin: 15px 0; /* Espaçamento entre os produtos */
+    background-color: #fff; /* Cor de fundo do produto */
+    display: flex; /* Exibe os itens em linha */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+}
+.product img {
+    max-width: 150px; /* Largura máxima da imagem */
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+    border-radius: 5px; /* Bordas arredondadas para a imagem */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.product img:hover {
+    transform: scale(1.1); /* Aumenta a imagem em 10% ao passar o mouse */
+}
+
+.product-info {
+    flex: 1; /* Permite que o conteúdo ocupe o espaço restante */
+}
+.product-info h3 {
+    margin: 0 0 10px; /* Espaçamento inferior */
+}
+.product-info p {
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+}
+.product-info .price {
+    font-weight: bold; /* Exibe o preço em negrito */
+    color: #e63946; /* Cor do preço */
+}
+/* Classe para ocultar o produto */
+.product.hidden {
+  display: none; /* Oculta o produto */
+}
+
+
+.navebar {
+  position: fixed; /* Fixa a navegação no topo */
+  display: flex; /* exibe os elementos em linha */
+  align-items: center; /* alinhamento vertical */
+  padding: 10px; /* espaçamento interno */
+  background-color: #ffffff; /* cor de fundo */
+  width: 100%; /* ocupa toda a largura da tela */
+  margin: 0; /* remove margens */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+/*.logo {
+ position: absolute;
+ top: 20px; 
+} */
+
+nav {
+  flex: 1; /* ocupa todo o espaço disponível */
+  text-align: right; /* alinhamento do menu a direita */
+  margin-right: 70px;
+}
+
+nav ul {
+  display: inline-block; /* exibe os itens em linha */
+  list-style-type: none; /* remove a bolinha da lista */
+}
+
+nav ul li {
+  display: inline-block; /* elementos em linha */
+  margin-right: 20px; /* espaçamento entre elementos */
+}
+
+nav ul li a {
+  text-decoration: none; /* remove o sublinhado do link */
+  color: #000000; /* cor do texto */
+}
+
+nav ul li a:hover {
+  color: #e7cd81; /* Define a cor ao passar o mouse sobre o link */
+}
+
+/* Estilo do dropdown */
+.dropdown {
+  position: relative; /* Define a posição relativa para o dropdown */
+  display: inline-block; /* Exibe o item em linha */
+}
+
+.dropbtn {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #000; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno */
+  display: inline-block; /* Exibe o botão em linha */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+}
+
+.dropdown-content {
+  display: none; /* Oculta o menu suspenso por padrão */
+  position: absolute; /* Posiciona o menu abaixo do botão */
+  background-color: #fff; /* Cor de fundo */
+  min-width: 150px; /* Largura mínima */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 1; /* Garante que o menu fique acima de outros elementos */
+}
+
+.dropdown-content li {
+  list-style: none; /* Remove os marcadores da lista */
+}
+
+.dropdown-content a {
+  color: #000; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: block; /* Exibe os itens como blocos */
+}
+
+.dropdown-content a:hover {
+  color: #e7cd81; /* Cor ao passar o mouse */
+}
+
+/* Exibe o menu suspenso ao passar o mouse */
+.dropdown:hover .dropdown-content {
+  display: block; /* Exibe o menu suspenso */
+}
+
+/* Estilo do pop-up */
+.popup {
+    display: none; /* Oculta o pop-up por padrão */
+    position: fixed;  /* Fixa o pop-up na tela */
+    top: 0; /* Posição fixa para ocupar toda a tela */
+    left: 0; /* Posição fixa para ocupar toda a tela */
+    width: 100%; /* Ocupa toda a tela */
+    height: 100%; /* Ocupa toda a tela */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    z-index: 1000; /* Garante que o pop-up fique acima de outros elementos */
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza o conteúdo */
+}
+
+.popup-content {
+    background-color: #fff; /* Cor de fundo do pop-up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 400px; /* Largura do pop-up */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Posição relativa para o botão de fechar */
+}
+
+.popup-content img {
+    max-width: 100%; /* Largura máxima da imagem */
+    border-radius: 5px; /* Bordas arredondadas para a imagem */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+.popup-content .close-btn {
+    position: absolute; /* Posição absoluta para o botão de fechar */
+    top: 10px; /* Distância do botão de fechar do topo */
+    right: 15px; /* Distância do botão de fechar do topo e da direita */
+    font-size: 20px; /* Tamanho do botão de fechar */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    color: #e63946; /* Cor do botão de fechar */
+}
+
+.popup-content .price {
+    font-weight: bold; /* Exibe o preço em negrito */
+    color: #e63946; /* Cor do preço */
+    margin: 10px 0; /* Espaçamento superior e inferior */
+}
+
+/* Estilo do carrinho */
+.cart-icon {
+  position: relative; /* Define a posição relativa para o ícone do carrinho */
+}
+
+.cart {
+  display: none; /* Oculta o carrinho por padrão, ele só será exibido quando necessário */
+  position: absolute; /* Posiciona o carrinho em relação ao elemento pai mais próximo com posição relativa */
+  top: 40px; /* Define a distância do carrinho em relação ao topo do elemento pai */
+  right: 0; /* Alinha o carrinho à direita do elemento pai */
+  border: 1px solid #ddd; /* Adiciona uma borda cinza clara ao redor do carrinho */
+}
+
+.cart h2 {
+  margin: 0 0 10px; /* Remove a margem superior e adiciona margem inferior */
+}
+
+.cart ul {
+  list-style: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o espaçamento interno da lista */
+  margin: 0; /* Remove o espaçamento padrão da lista */
+}
+
+.cart ul li {
+  margin-bottom: 10px; /* Espaçamento inferior entre os itens do carrinho */
+  border-bottom: 1px solid #ddd; /* Adiciona uma linha separadora entre os itens */
+  padding-bottom: 10px; /* Adiciona espaçamento inferior */
+}
+
+#btn {
+  background-color: #bda0a1; /* Cor vibrante para o botão */
+  color: white; /* Cor do texto do botão */
+  padding: 10px 10px; /* Espaçamento interno do botão */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+#btn:hover {
+  background-color: #e7cd81; /* Cor ao passar o mouse sobre o botão */
+}
+
+#titulo {
+  text-align: justify; /* Alinhamento do texto */
+  font-size: 25px; /* Tamanho da fonte do título */
+  margin: 10px 0; /* Espaçamento superior e inferior */
+  margin-top: 110px; /* Espaçamento superior para evitar sobreposição com a barra de navegação */
+  color: #353232; /* Cor do texto */
+}
+/* Classe para desfocar o fundo */
+.blur {
+    filter: blur(5px); /* Aplica um desfoque de 5px */
+    transition: filter 0.10s ease; /* Adiciona uma transição suave */
+}
+
+/* Estilo da classificação */
+.classificacao {
+    display: flex; /* Exibe as estrelas em linha */
+    gap: 2px; /* Adiciona um pequeno espaçamento entre as estrelas */
+    margin-top: 5px; /* Adiciona um espaçamento superior */
+    color: #FFD700; /* Define a cor das estrelas como dourado */
+    font-size: 16px; /* Define o tamanho das estrelas */
+}
+
+.classificacao icon-icon {
+    cursor: default; /* Remove o cursor de interação */
+}

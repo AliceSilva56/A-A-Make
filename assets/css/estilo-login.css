@@ -1,0 +1,126 @@
+/* Estilo do Registro */
+
+body {
+    background-color: #bda0a1; /* Rosa antigo */
+    display: flex; /* Usando flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Mantém a altura da tela */
+    margin: 0; /* Remove margens padrão */
+}
+
+/* Estilo do container de login */
+.login-container {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex; /* Usando flexbox para layout */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza os itens */
+    width: 300px; /* Largura fixa do container */
+    min-height: 350px; /* Altura mínima para acomodar mensagens de erro */
+    justify-content: space-between; /* Distribui espaço entre os itens */
+}
+
+/* Estilo da imagem (logo) */
+img {
+    width: 150px; /* Largura da logo */
+}
+
+/* Estilo dos campos de entrada */
+input {
+    width: 90%; /* Largura dos inputs */
+    padding: 10px; /* Espaçamento interno */
+    margin: 15px 0; /* Margem vertical */
+    border: 2px solid #d4b5b6; /* Borda rosa antigo */
+    border-radius: 35px; /* Bordas arredondadas */
+    color: #333333; /* Texto cinza escuro */
+}
+
+/* Estilo do botão */
+button {
+    width: 60%; /* Largura do botão */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #e7cd81; /* Cor vibrante para o botão */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: white; /* Cor do texto do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    margin-top: 10px; /* Margem superior */
+    transition: transform 0.2s; /* Transição suave para transformações */
+    position: static; /* Mantém o botão dentro do container */
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    transform: scale(1.05); /* Aumenta o botão em 5% ao passar o mouse */
+}
+
+/* Estilo das mensagens de erro */
+#username-error, #password-error, #email-error {
+    color: red; /* Cor vermelha para erros */
+    font-size: 12px; /* Tamanho da fonte */
+    text-align: left; /* Justifica o texto à esquerda */
+    width: 100%; /* Largura total */
+    margin-top: 5px; /* Espaçamento acima da mensagem de erro */
+}
+
+/* Estilo da seção "lembrar-me" */
+.remember-me {
+    display: flex; /* Usando flexbox */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Justifica os elementos nas extremidades */
+    width: 85%; /* Largura da seção */
+    margin: 10px 0; /* Margem vertical */
+}
+
+/* Estilo do container do checkbox */
+.remember-me .checkbox-container {
+    display: flex; /* Usando flexbox */
+    align-items: center; /* Alinha verticalmente */
+    margin-bottom: 1px; /* Espaçamento inferior */
+}
+
+/* Estilo do input do checkbox */
+.remember-me input {
+    width: auto; /* Largura automática */
+    margin-right: 5px; /* Espaçamento entre o checkbox e a label */
+}
+
+/* Estilo da label do checkbox */
+.remember-me label {
+    font-size: 14px; /* Tamanho da fonte */
+    color: #333333; /* Cor do texto */
+    margin-left: 0; /* Remove margem esquerda */
+}
+
+/* Estilo dos links de opção */
+.option-link {
+    color: #e7cd81; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Efeito de hover nos links de opção */
+.option-link:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Estilo da seção de criação de conta */
+.create-account {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px; /* Margem superior */
+}
+
+/* Estilo do título e subtítulo */
+#title, #subtitle {
+    font-size: 17px; /* Tamanho da fonte */
+    color: #414040; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove margens padrão */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fonte serifada */
+    margin-top: 5px; /* Margem superior */
+    margin-bottom: 5px; /* Margem inferior */
+}

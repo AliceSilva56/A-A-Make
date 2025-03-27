@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-dark-color: #10121A;
+  --background-dark-grey: #191D2B;
+  --border-color: #2e344e;
+  --background-light-color: #F1F1F1;
+  --white-color: #FFF;
+  --font-light-color: #a4acc4;
+  --font-dark-color: #313131;
+  --font-dark-color-2: #151515;
+  --sidebar-dark-color: #191D2B;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.banner {
+    background-color: #d4b5b6;
+}
+
+.banner .linha {
+  margin-top: 70px;
+}
+
+.container {
+  max-width: 1300px;
+  margin:  auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  /* position: relative; */
+
+}
+
+/* Estilo da navegação */
+.navebar {
+  position: fixed; /* Fixa a navegação no topo */
+  top: 0;
+  left: 0;
+  width: 100%; /* Faz a navegação ocupar toda a largura */
+  background-color: #ffffff; /* Cor de fundo */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  display: flex; /* Exibe os elementos em linha */
+  align-items: center; /* Alinha verticalmente */
+  padding: 10px; /* Espaçamento interno */
+  margin: 0;
+}
+
+.navebar .logo img {
+  max-height: 80px; /* Ajusta a altura do logo */
+}
+
+nav {
+  margin-right: 70px;
+  flex: 1; /* Ocupa o espaço restante */
+  text-align: right; /* Alinha o menu à direita */
+}
+
+nav ul {
+  list-style: none; /* Remove os marcadores da lista */
+  margin: 0;
+  padding: 0;
+  display: inline-flex; /* Exibe os itens em linha */
+  justify-content: flex-end; /* Alinha os itens à direita */
+  list-style-type: none; /* remove a bolinha da lista */
+}
+
+nav ul li {
+  position: relative; /* Necessário para o dropdown */
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #000; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno */
+  transition: color 0.3s ease; /* Transição suave */
+}
+
+nav ul li a:hover {
+  color: #e7cd81; /* Cor ao passar o mouse */
+}
+
+/* Estilo do dropdown */
+.dropdown-content {
+  display: none; /* Oculta o menu suspenso por padrão */
+  position: absolute; /* Posiciona o menu abaixo do botão */
+  background-color: #ffffff; /* Cor de fundo */
+  min-width: 150px; /* Largura mínima */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  padding: 10px 0; /* Espaçamento interno */
+}
+
+.dropdown-content li {
+  list-style: none; /* Remove os marcadores */
+}
+
+.dropdown-content a {
+  color: #000; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado */
+  display: block; /* Exibe os itens como blocos */
+}
+
+.dropdown-content a:hover {
+  color: #e7cd81;
+}
+
+/* Exibe o dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+  display: block; /* Exibe o menu suspenso */
+}
+
+/* Adiciona espaçamento no conteúdo para compensar a navegação fixa */
+.banner {
+  margin-top: 70px; /* Ajuste para a altura da navegação */
+  color: #ffffff;
+}
+
+
+p {
+  color: var(--background-light-color)
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+.col-2 {
+  flex-basis: 50%;
+  min-width: 300px;
+}
+
+.col-2 img {
+  max-width: 100%;
+  padding: 50px 0;
+  margin-left: 200px;
+}
+
+.col-2 h1 {
+  font-size: 50px;
+  line-height: 60px;
+  margin: 25px 0;
+}
+
+.col-2 p {
+  color: var(--cor-btn-fonte);
+  font-weight: 600;
+}
+
+.btn {
+ text-decoration: none;
+  color: #ffffff;
+  background-color:  #d4b5b6;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  border: 2px solid #e7cd81; /* Adiciona uma borda preta */
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: #e7cd81;
+  color: #ffffff;
+}
+
+.categoria {
+  margin: 70px 0;
+}
+
+.corpo-categoria {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+
+}
+
+.col-3 {
+  flex-basis: calc(25% - 20px); /* Cada elemento ocupa 25% do espaço disponível, menos o gap */
+  max-width: 350px; /* Define a largura máxima de cada elemento */
+  margin-bottom: 30px; /* Adiciona um espaçamento inferior */
+}
+
+.col-3 img {
+  width: 100%; /* Faz com que a imagem ocupe 100% da largura do elemento pai */
+  object-fit: cover; /* Garante que a imagem preencha o espaço disponível sem distorção */
+  object-position: center; /* Centraliza a imagem dentro do espaço disponível */
+}
+
+.col-4 {
+  flex-basis: 25%;
+  max-width: 200px;
+  padding: 10px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+}
+
+.col-4 :hover {
+  transform: scale(1.1);
+}
+
+.col-4 img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+.titulo {
+ position: relative;
+ line-height: 60px;
+ margin: 0 auto 80px;
+text-align: center;
+color: #000000;
+}
+
+.titulo::after {
+  content: '';
+  background-color: #e7cd81;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+h4 {
+  color: #000000;
+  font-weight: normal;
+}
+
+.col-4 p {
+  font-size: 14px;
+}
+
+.classificacao {
+  color: #f2ec30;
+}
+
+/* Estilo do carrinho */
+.cart-icon {
+  position: relative;
+}
+
+.cart {
+  display: none; /* Oculta o carrinho por padrão, ele só será exibido quando necessário */
+  position: absolute; /* Posiciona o carrinho em relação ao elemento pai mais próximo com posição relativa */
+  top: 40px; /* Define a distância do carrinho em relação ao topo do elemento pai */
+  right: 0; /* Alinha o carrinho à direita do elemento pai */
+  border: 1px solid #ddd; /* Adiciona uma borda cinza clara ao redor do carrinho */
+}
+
+.cart h2 {
+  margin: 0 0 10px;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart ul li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+
+/*.logo {
+ position: absolute;
+ top: 20px; 
+} */

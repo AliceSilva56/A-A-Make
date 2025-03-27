@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/Logo.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/estilo-produtos.css">
+    <title>Produtos - A&A Make</title>
+</head>
+
+<body>
+    <div class="banner">
+
+        <div class="navebar">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Logo" width="90px">
+            </div>
+
+            <!-- Menu de navegação -->
+            <nav>
+                <ul id="menuItens">
+                    <li><a href="tela_principal.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li class="dropdown">
+                        <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#" onclick="filterProducts('all')">Todos</a></li>
+                            <li><a href="#" onclick="filterProducts('rosto')">Rosto</a></li>
+                            <li><a href="#" onclick="filterProducts('olhos')">Olhos</a></li>
+                            <li><a href="#" onclick="filterProducts('labios')">Lábios</a></li>
+                            <li><a href="#" onclick="filterProducts('acessorios')">Acessórios</a></li>
+                        </ul>
+                    </li>
+                    <!-- Carrinho -->
+                    <li class="cart-icon">
+                        <a href="#" onclick="toggleCart()">🛒</a>
+                        <div id="cart" class="cart">
+                            <ul id="cartItems"></ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container">
+            <h1 id="titulo">Produtos Disponíveis</h1>
+
+            <!-- Categoria Rosto -->
+            <!-- Produto 1 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(0)">
+                <img src="assets/img/base-rosto.png" alt="Base para Rosto">
+                <div class="product-info">
+                    <h3>Base para Rosto</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 20,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/base-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 2 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(1)">
+                <img src="assets/img/corretivo-primer-rosto.png" alt="Base para Rosto">
+                <div class="product-info">
+                    <h3>Corretivo e primer</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 20,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/corretivo-primer-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 3 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(2)">
+                <img src="assets/img/pó-rosto.png" alt="Pó Compacto">
+                <div class="product-info">
+                    <h3>Pó Compacto</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 18,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/pó-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 4 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(3)">
+                <img src="assets/img/primer-rosto.png" alt="Primer">
+                <div class="product-info">
+                    <h3>Primer</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 25,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/primer-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 5 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(4)">
+                <img src="assets/img/esponja-maquiagem.png" alt="Esponja de Maquiagem">
+                <div class="product-info">
+                    <h3>Esponja de Maquiagem</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 12,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/esponja-maquiagem2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 6 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(5)">
+                <img src="assets/img/kit-pinceis.png" alt="Kit de Pincéis">
+                <div class="product-info">
+                    <h3>Kit de Pincéis</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 20,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/kit-pinceis2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 7 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(6)">
+                <img src="assets/img/iluminador-rosto.png" alt="Iluminador">
+                <div class="product-info">
+                    <h3>Iluminador</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 18,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/iluminador-rosto2.png" alt="OutraImagem">
+            </div>
+            <!-- Produto 8 Categoria Rosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(7)">
+                <img src="assets/img/corretivo-rosto.png" alt="Corretivo">
+                <div class="product-info">
+                    <h3>Corretivo</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 22,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/corretivo-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 9 Categoria Rosto -->
+            <div data-category="rosto" class="product" onclick="openPopup(8)">
+                <img src="assets/img/fixador-maquiagem.png" alt="Fixador de Maquiagem">
+                <div class="product-info">
+                    <h3>Fixador de Maquiagem</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 25,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/fixador-maquiagem2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 10 CategoriaRosto-->
+            <div data-category="rosto" class="product" onclick="openPopup(9)">
+                <img src="assets/img/contorno-rosto.png" alt="Paleta de Contorno">
+                <div class="product-info">
+                    <h3>Contorno e corretivo cremoso em bastão</h3>
+                    <p>Categoria: Rosto</p>
+                    <p class="price">R$ 23,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/contorno-rosto2.png" alt="OutraImagem">
+            </div>
+
+
+
+            <!--Categoria Olhos-->
+
+
+            <!-- Produto 1 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(10)">
+                <img src="assets/img/mascara-olhos.avif" alt="Máscara para Olhos">
+                <div class="product-info">
+                    <h3>Máscara para Olhos</h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 10,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img id="img2" src="assets/img/mascara-olhos2.avif" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 2 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(11)">
+                <img src="assets/img/sombra-olhos.png" alt="Sombra para Olhos">
+                <div class="product-info">
+                    <h3>Sombra para Olhos</h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 22,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/sombra-olhos2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 3 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(12)">
+                <img src="assets/img/delineador-olhos.png" alt="Delineador">
+                <div class="product-info">
+                    <h3>Delineador</h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 23,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/delineador-olhos2.png" alt="OutraImagem">
+            </div>
+
+
+
+            <!-- Produto 4 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(13)">
+                <img src="assets/img/paleta-olhos.png" alt="Paleta de Sombras">
+                <div class="product-info">
+                    <h3>Paleta de Sombras</h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 24,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/paleta-olhos2.png" alt="OutraImagem">
+            </div>
+
+
+
+            <!-- Produto 5 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(14)">
+                <img src="assets/img/cilios-posticos.png" alt="Cílios Postiços">
+                <div class="product-info">
+                    <h3>Cílios Postiços</h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/cilios-posticos2.png" alt="OutraImagem">
+            </div>
+
+
+            <!-- Produto 6 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(15)">
+                <img src="assets/img/lapis-olhos.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Lápis para Olhos</h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 10,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/lapis-olhos2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 7 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(16)">
+                <img src="assets/img/kit-batom-glitter-rosto.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3> Kit Batom Glitter Lip Dazzler</h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/kit-batom-glitter-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 8 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(17)">
+                <img src="assets/img/Lápis-Retrátil-Delineador-rosto.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Lápis Retrátil Delineador </h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 7,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Lápis-Retrátil-Delineador-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 9 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(18)">
+                <img src="assets/img/Sombra-Jelly-Brilho-rosto.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Sombra Jelly Sheglam Brilho Prateado Olhos | Sheglam </h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Sombra-Jelly-Brilho-rosto2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 10 Categoria Olhos-->
+            <div data-category="olhos" class="product" onclick="openPopup(19)">
+                <img src="assets/img/Máscara-impermeável-Rimel-rosto.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Máscara impermeável Rimel | Sheglam </h3>
+                    <p>Categoria: Olhos</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Máscara-impermeável-Rimel-rosto2.png" alt="OutraImagem">
+            </div>
+
+
+
+            <!--Categoria Lábios-->
+
+
+            <!-- Produto 1 Categoria Lábios-->
+            <div data-category="labios" class="product" onclick="openPopup(20)">
+                <img src="assets/img/batom-labios.png" alt="Batom">
+                <div class="product-info">
+                    <h3>Batom</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/batom-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 2 Categoria Lábios-->
+            <div data-category="labios" class="product" onclick="openPopup(21)">
+                <img src="assets/img/gloss-labios.png" alt="Gloss">
+                <div class="product-info">
+                    <h3>Gloss com ácido hialurônico</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 12,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/gloss-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 3 Categoria Lábios-->
+            <div data-category="labios" class="product" onclick="openPopup(22)">
+                <img src="assets/img/lapis-labios.png" alt="Lápis para Lábios">
+                <div class="product-info">
+                    <h3>Lápis para Lábios</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 10,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/lapis-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 4 Lábios-->
+            <div data-category="labios" class="product" onclick="openPopup(23)">
+                <img src="assets/img/balm-labios.png" alt="Balm Labial">
+                <div class="product-info">
+                    <h3>Balm Labial</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 14,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/balm-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 5 Categoria Lábios-->
+
+            <div data-category="labios" class="product" onclick="openPopup(24)">
+                <img src="assets/img/gloss-e-lápis-de-boca-labios.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Gloss e Lápis De Boca | Sheglam</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/gloss-e-lápis-de-boca-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 6 Categoria Lábios-->
+
+            <div data-category="labios" class="product" onclick="openPopup(25)">
+                <img src="assets/img/Batom Hidratante-labios.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Batom Hidratante | Sheglam</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 10,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Batom Hidratante-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 7 Categoria Lábios-->
+
+            <div data-category="labios" class="product" onclick="openPopup(26)">
+                <img src="assets/img/Gloss-Labial-Glow-labios.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Gloss Labial Glow | Sheglam</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 10,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Gloss-Labial-Glow-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 8 Categoria Lábios-->
+
+            <div data-category="labios" class="product" onclick="openPopup(27)">
+                <img src="assets/img/Duo-BatomeLápis-de-Boca-labios.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Duo Batom e Lápis de Boca | Sheglam</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 17,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Duo-BatomeLápis-de-Boca-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 9 Categoria Lábios-->
+
+            <div data-category="labios" class="product" onclick="openPopup(28)">
+                <img src="assets/img/Lip-GlossELip-Liner-labios.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>Lip Gloss E Lip Liner Duo Willy Wonka | Sheglam</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 15,00</p>
+                </div>
+                <img src="assets/img/Lip-GlossELip-Liner-labios2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 10 Categoria Lábios-->
+
+            <div data-category="labios" class="product" onclick="openPopup(29)">
+                <img src="assets/img/NIVEA-Hidratante-LabialeSheglam-labios.png" alt="Lápis para Olhos">
+                <div class="product-info">
+                    <h3>NIVEA Hidratante Labial e Sheglam | Sheglam | NIVEA</h3>
+                    <p>Categoria: Lábios</p>
+                    <p class="price">R$ 19,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/NIVEA-Hidratante-LabialeSheglam-labios2.png" alt="OutraImagem">
+            </div>
+
+
+
+            <!--Categoria Acessórios-->
+
+
+            <!-- Produto 1 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(30)">
+                <img src="assets/img/espelho-maquiagem.png" alt="Espelho de Maquiagem">
+                <div class="product-info">
+                    <h3>Espelho de Maquiagem</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 19,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/espelho-maquiagem2.png" alt="OutraImagem">
+            </div>
+
+            <!-- Produto 2 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(31)">
+                <img src="assets/img/organizador-maquiagem.png" alt="Organizador de Maquiagem">
+                <div class="product-info">
+                    <h3>Organizador de Maquiagem</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 25,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/organizador-maquiagem2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 3 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(32)">
+                <img src="assets/img/necessaire.png" alt="Necessaire">
+                <div class="product-info">
+                    <h3>Necessaire</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 20,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/necessaire2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 4 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(33)">
+                <img src="assets/img/kit-pinceis_espelho.png" alt="PincéisEspelho">
+                <div class="product-info">
+                    <h3>Pincéis de Maquiagem com Espelho - Kit 5 Peças</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/kit-pinceis_espelho2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 5 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(34)">
+                <img src="assets/img/Brinco-acessorios.png" alt="PincéisEspelho">
+                <div class="product-info">
+                    <h3>Brinco trio fundo do mar dourado </h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Brinco-acessorios2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 6 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(35)">
+                <img src="assets/img/Argola-acessorios.png" alt="PincéisEspelho">
+                <div class="product-info">
+                    <h3>Brinco Prata 925 Brinco Argola 9cm Grande</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Argola-acessorios2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 7 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(36)">
+                <img src="assets/img/brinco-flor-acessorios.png" alt="PincéisEspelho">
+                <div class="product-info">
+                    <h3>Brinco flor elegante</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/brinco-flor-acessorios2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 8 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(37)">
+                <img src="assets/img/colar-gota-acessorios.png" alt="PincéisEspelho">
+                <div class="product-info">
+                    <h3>Colar Gota Pedra Natural Ametista Banhado a Prata</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/colar-gota-acessorios2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 9 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(38)">
+                <img src="assets/img/Colar-Dupla-Camada-acessorios.png" alt="PincéisEspelho">
+                <div class="product-info">
+                    <h3>Colar Dupla Camada Com Pingente De Estrela</h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9734;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Colar-Dupla-Camada-acessorios2.png" alt="OutraImagem">
+
+            </div>
+
+            <!-- Produto 10 Categoria Acessórios-->
+            <div data-category="acessorios" class="product" onclick="openPopup(39)">
+                <img src="assets/img/Colar-Com-Pingente-acessorios.png" alt="PincéisEspelho">
+                <div class="product-info">
+                    <h3>Colar Com Pingente Letra A </h3>
+                    <p>Categoria: Acessórios</p>
+                    <p class="price">R$ 15,00</p>
+                    <div class="classificacao">
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                        <icon-icon name="star">&#9733;</icon-icon>
+                    </div>
+                </div>
+                <img src="assets/img/Colar-Com-Pingente-acessorios2.png" alt="OutraImagem">
+
+            </div>
+
+        </div>
+
+        <!-- Pop-up para descrição do produto -->
+        <div id="productPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2 id="popupTitle">Título do Produto</h2>
+                <img id="popupImage" src="" alt="Imagem do Produto">
+                <p id="popupDescription">Descrição detalhada do produto.</p>
+                <p id="popupPrice" class="price">Preço: R$ 0,00</p>
+                <button id="btn" onclick="addToCart()">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+
+
+        <script>
+            // Alterna a exibição do menu suspenso ao clicar no botão
+            document.querySelector('.dropbtn').addEventListener('click', function (e) {
+                e.preventDefault(); // Evita o comportamento padrão do link
+                const dropdownContent = document.querySelector('.dropdown-content');
+                dropdownContent.style.display =
+                    dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Fecha o menu suspenso ao clicar fora dele
+            window.addEventListener('click', function (e) {
+                const dropdown = document.querySelector('.dropdown');
+                if (!dropdown.contains(e.target)) {
+                    document.querySelector('.dropdown-content').style.display = 'none';
+                }
+            });
+
+            // Dados dos produtos
+            const products = [
+
+                //produto 1 Base para Rosto-- OK
+                {
+                    title: "Base para Rosto",
+                    image: "assets/img/base-rosto.png",
+                    description: "Uma base desenvolvida para conter a oleosidade da pele e disfarçar as imperfeições.",
+                    price: "R$ 20,00"
+                },
+
+                //produto 2 corretivo e primer-- OK
+                {
+                    title: "Corretivo e Primer",
+                    image: "assets/img/corretivo-primer-rosto.png",
+                    description: "Pele hidratada, ajudando na suavização da pele e corrijindo as imperfeições!",
+                    price: "R$ 20,00"
+                },
+
+                //produto 3 Pó Compacto--
+                {
+                    title: "Pó Compacto",
+                    image: "assets/img/pó-rosto.png",
+                    description: "Pó compacto para acabamento perfeito.",
+                    price: "R$ 18,00"
+                },
+
+                //produto 4 Primer--
+                {
+                    title: "Primer",
+                    image: "assets/img/primer-rosto.png",
+                    description: "O Primer perfeito para toda a face, com uma textura siliconada, suaviza a pele e auxilia na durabilidade da Make!",
+                    price: "R$ 25,00"
+                },
+
+                //produto 5 Esponja de Maquiagem--
+                {
+                    title: "Esponja de Maquiagem",
+                    image: "assets/img/esponja-maquiagem.png",
+                    description: "Esponja para aplicação de base e corretivo.",
+                    price: "R$ 12,00"
+                },
+
+                //produto 6 Kit de Pincéis--
+                {
+                    title: "Kit de Pincéis",
+                    image: "assets/img/kit-pinceis.png",
+                    description: "Kit de pincéis para maquiagem profissional.",
+                    price: "R$ 20,00"
+                },
+                //produto 7 Iluminador--
+                {
+                    title: "Iluminador",
+                    image: "assets/img/iluminador-rosto.png",
+                    description: "Pó iluminador fada é fino e fácil tingir. Ele poefetivamente melhorar os contornos faciais e tornar sua maquiagem mais radiante e atraente.",
+                    price: "R$ 18,00"
+                },
+                //produto 8 Corretivo--
+                {
+                    title: "Corretivo",
+                    image: "assets/img/corretivo-rosto.png",
+                    description: "Corretivo para disfarçar imperfeições da pele.",
+                    price: "R$ 22,00"
+                },
+                //produto 9 Fixador de Maquiagem--
+                {
+                    title: "Fixador de Maquiagem",
+                    image: "assets/img/fixador-maquiagem.png",
+                    description: "Fixador de maquiagem para prolongar a duração.",
+                    price: "R$ 25,00"
+                },
+                //produto 10 Paleta de Contorno--
+                {
+                    title: "Paleta de Contorno",
+                    image: "assets/img/contorno-rosto.png",
+                    description: "Paleta de contorno para definir o rosto.",
+                    price: "R$ 23,00"
+                },
+                //produto 11 Máscara para Olhos-- 
+                {
+                    title: "Máscara para Olhos",
+                    image: "assets/img/mascara-olhos.avif",
+                    description: "Pele mais firme, hidratada e com sinais de expressão suavizados!",
+                    price: "R$ 10,00"
+                },
+                //produto 12 sombra para olhos--
+                {
+                    title: "Sombra para Olhos",
+                    image: "assets/img/sombra-olhos.png",
+                    description: "As Paletas Zanphy estão de cara e cores novas! As novas versões vem com cores mais pigmentadas para você esfumar sem dó.",
+                    price: "R$ 22,00"
+                },
+                //produto 13 Delineador--
+                {
+                    title: "Delineador",
+                    image: "assets/img/delineador-olhos.png",
+                    description: "Delineador Anita,  possui traço fino, resistente à água, além de uma ótima pigmentação, Use o Delineador Anita para destacar e aumentar o olhar.",
+                    price: "R$ 23,00"
+                },
+                //produto 14 Paleta de Sombras--
+                {
+                    title: "Paleta de Sombras",
+                    image: "assets/img/paleta-olhos.png",
+                    description: "Sombra de alta pigmentação para destacar seus olhos.",
+                    price: "R$ 24,00"
+                },
+                //produto 15 Cílios Postiços--
+                {
+                    title: "Cílios Postiços",
+                    image: "assets/img/cilios-posticos.png",
+                    description: "Cílios postiços para um olhar marcante.",
+                    price: "R$ 15,00"
+                },
+                //produto 16 Lápis para Olhos--
+                {
+                    title: "Lápis para Olhos",
+                    image: "assets/img/lapis-olhos.png",
+                    description: "Lápis para olhos com alta pigmentação.",
+                    price: "R$ 10,00"
+                },
+                //produto 17 Kit Batom Glitter Lip Dazzler--
+                {
+                    title: "Kit Batom Glitter Lip Dazzler",
+                    image: "assets/img/kit-batom-glitter-rosto.png",
+                    description: "O Lápis Labial é a escolha ideal para definir e realçar os lábios com precisão e estilo.",
+                    price: "R$ 15,00"
+                },
+                //produto 18 Lápis Retrátil Delineador--
+                {
+                    title: "Lápis Retrátil Delineador",
+                    image: "assets/img/Lápis-Retrátil-Delineador-rosto.png",
+                    description: "Lápis retrátil para olhos com alta pigmentação.",
+                    price: "R$ 7,00"
+                },
+                //produto 19 Sombra Jelly Sheglam Brilho Prateado Olhos--
+                {
+                    title: "Sombra Jelly Sheglam Brilho Prateado Olhos",
+                    image: "assets/img/Lápis-Retrátil-Delineador-rosto.png",
+                    description: "Sombra para olhos com alta pigmentação.",
+                    price: "R$ 15,00"
+                },
+                //produto 20 Máscara impermeável Rimel--
+                {
+                    title: "Máscara impermeável Rimel",
+                    image: "assets/img/Máscara-impermeável-Rimel-rosto.png",
+                    description: "Máscara para cílios com alta pigmentação.",
+                    price: "R$ 15,00"
+                },
+                //produto 21 Batom--
+                {
+                    title: "Batom",
+                    image: "assets/img/batom-labios.png",
+                    description: "Batom hidratante com cores vibrantes, Perfeita Pigmentação, Extrema Cobertura, Fixação Rápida.",
+                    price: "R$ 15,00"
+                },
+                //produto 22 Gloss--
+                {
+                    title: "Gloss como ácido hialurônico",
+                    image: "assets/img/gloss-labios.png",
+                    description: "O Gloss para Volume Labial oferece uma solução eficaz para quem deseja lábios mais volumosos e hidratados, contém ingredientes com ácido hialurônico e extrato de menta, que ajudam a aumentar o volume e definir os lábios",
+                    price: "R$ 12,00"
+                },
+                //produto 23 Lápis para Lábios--
+                {
+                    title: "Lápis para Lábios",
+                    image: "assets/img/lapis-labios.png",
+                    description: "O Lápis Labial é a escolha ideal para definir e realçar os lábios com precisão e estilo.",
+                    price: "R$ 10,00"
+                },
+                //produto 24 Balm Labial--
+                {
+                    title: "Balm Labial",
+                    image: "assets/img/balm-labios.png",
+                    description: "Balm labial para hidratação dos lábios.",
+                    price: "R$ 14,00"
+                },
+                //produto 25 Gloss e Lápis De Boca--
+                {
+                    title: "Gloss e Lápis De Boca",
+                    image: "assets/img/gloss-e-lápis-de-boca-labios.png",
+                    description: "Gloss e Lápis De Boca | Sheglam",
+                    price: "R$ 15,00"
+                },
+                //produto 26 Batom Hidratante-- concertar imagem
+                {
+                    title: "Batom Hidratante",
+                    image: "assets/img/Batom Hidratante-labios.png",
+                    description: "Batom Hidratante | Sheglam",
+                    price: "R$ 10,00"
+                },
+                //produto 27 Gloss Labial Glow--
+                {
+                    title: "Gloss Labial Glow",
+                    image: "assets/img/Gloss-Labial-Glow-labios.png",
+                    description: "Gloss Labial Glow | Sheglam",
+                    price: "R$ 10,00"
+                },
+                //produto 28 Duo Batom e Lápis de Boca--
+                {
+                    title: "Duo Batom e Lápis de Boca",
+                    image: "assets/img/Duo-BatomeLápis-de-Boca-labios.png",
+                    description: "Duo Batom e Lápis de Boca | Sheglam",
+                    price: "R$ 17,00"
+                },
+                //produto 29 Lip Gloss E Lip Liner Duo Willy Wonka--
+                {
+                    title: "Lip Gloss E Lip Liner Duo Willy Wonka",
+                    image: "assets/img/Lip-GlossELip-Liner-labios.png",
+                    description: "Lip Gloss E Lip Liner Duo Willy Wonka | Sheglam",
+                    price: "R$ 15,00"
+                },
+                //produto 30 NIVEA Hidratante Labial e Sheglam--
+                {
+                    title: "NIVEA Hidratante Labial e Sheglam",
+                    image: "assets/img/NIVEA-Hidratante-Labial-e-Sheglam-labios.png",
+                    description: "NIVEA Hidratante Labial e Sheglam",
+                    price: "R$ 19,00"
+                },
+                //produto 31 Espelho de Maquiagem--
+                {
+                    title: "Espelho de Maquiagem",
+                    image: "assets/img/espelho-maquiagem.png",
+                    description: "Espelho com led.",
+                    price: "R$ 19,00"
+                },
+                //produto 32 Organizador de Maquiagem--
+                {
+                    title: "Organizador de Maquiagem",
+                    image: "assets/img/organizador-maquiagem.png",
+                    description: "Organizador para manter sua maquiagem em ordem.",
+                    price: "R$ 25,00"
+                },
+                //produto 33 Necessaire--
+                {
+                    title: "Necessaire",
+                    image: "assets/img/necessaire.png",
+                    description: "Necessaire para guardar seus produtos de maquiagem.",
+                    price: "R$ 20,00"
+                },
+                //produto 34 Pincéis de Maquiagem com Espelho - Kit 5 Peças--
+                {
+                    title: "Pincéis de Maquiagem com Espelho - Kit 5 Peças",
+                    image: "assets/img/kit-pinceis_espelho.png",
+                    description: "Kit de pincéis e espelho para ajudar no dia a dia.",
+                    price: "R$ 15,00"
+                },
+                //produto 35 Brinco trio fundo do mar dourado
+                {
+                    title: "Brinco trio fundo do mar dourado",
+                    image: "assets/img/Brinco-acessorios.png",
+                    description: "Brinco trio fundo do mar dourado.",
+                    price: "R$ 15,00"
+                },
+                //produto 36 Brinco Prata 925 Brinco Argola 9cm Grande
+                {
+                    title: "Brinco Prata 925 Brinco Argola 9cm Grande",
+                    image: "assets/img/Argola-acessorios.png",
+                    description: "Brinco Prata 925 Brinco Argola 9cm Grande.",
+                    price: "R$ 15,00"
+                },
+                //produto 37 Brinco flor elegante
+                {
+                    title: "Brinco flor elegante",
+                    image: "assets/img/Brinco-flor.png",
+                    description: "Brinco flor elegante.",
+                    price: "R$ 15,00"
+                },
+                //produto 38 Colar Gota Pedra Natural Ametista Banhado a Prata
+                {
+                    title: "Colar Gota Pedra Natural Ametista Banhado a Prata",
+                    image: "assets/img/colar-gota-acessorios.png",
+                    description: "Colar Gota Pedra Natural Ametista Banhado a Prata.",
+                    price: "R$ 15,00"
+                },
+                //produto 39 Colar Dupla Camada Com Pingente De Estrela
+                {
+                    title: "Colar Dupla Camada Com Pingente De Estrela",
+                    image: "assets/img/Colar-Dupla-Camada-acessorios.png",
+                    description: "Colar Dupla Camada Com Pingente De Estrela.",
+                    price: "R$ 15,00"
+                },
+                //produto 40 Colar Com Pingente Letra A
+                {
+                    title: "Colar Com Pingente Letra A",
+                    image: "assets/img/Colar-Com-Pingente-acessorios2.png",
+                    description: "Colar Com Pingente Letra A.",
+                    price: "R$ 15,00"
+                }
+            ];
+
+            // Função para abrir o pop-up
+            function openPopup(index) {
+                const product = products[index];
+                document.getElementById("popupTitle").textContent = product.title;
+                document.getElementById("popupImage").src = product.image;
+                document.getElementById("popupDescription").textContent = product.description;
+                document.getElementById("popupPrice").textContent = `Preço: ${product.price}`;
+                document.getElementById("productPopup").style.display = "flex";
+
+                // Adiciona a classe de desfoque ao fundo
+                document.querySelector(".container").classList.add("blur");
+            }
+
+            // Função para fechar o pop-up
+            function closePopup() {
+                document.getElementById("productPopup").style.display = "none";
+                // Remove a classe de desfoque do fundo
+                document.querySelector(".container").classList.remove("blur");
+            }
+
+            // Função para adicionar ao carrinho
+            function addToCart() {
+                const title = document.getElementById("popupTitle").textContent;
+                const price = document.getElementById("popupPrice").textContent;
+                const cartItems = document.getElementById("cartItems");
+
+                const li = document.createElement("li");
+                li.textContent = `${title} - ${price}`;
+                cartItems.appendChild(li);
+
+                closePopup(); // Fecha o pop-up após adicionar ao carrinho
+            }
+
+            // Função para filtrar produtos por categoria
+            function filterProducts(category) {
+                const products = document.querySelectorAll('.product');
+                const titulo = document.getElementById('titulo'); // Seleciona o título
+
+                // Atualiza o título com base na categoria selecionada
+                if (category === 'all') {
+                    titulo.textContent = 'Produtos Disponíveis';
+                } else if (category === 'rosto') {
+                    titulo.textContent = 'Produtos Disponíveis | Categ. Rosto';
+                } else if (category === 'olhos') {
+                    titulo.textContent = 'Produtos Disponíveis | Categ. Olhos';
+                } else if (category === 'labios') {
+                    titulo.textContent = 'Produtos Disponíveis | Categ. Lábios';
+                } else if (category === 'acessorios') {
+                    titulo.textContent = 'Produtos Disponíveis | Categ. Acessórios';
+                }
+
+                // Filtra os produtos com base na categoria
+                products.forEach(product => {
+                    if (category === 'all') {
+                        product.classList.remove('hidden'); // Remove a classe que oculta o produto
+                    } else {
+                        if (product.getAttribute('data-category') === category) {
+                            product.classList.remove('hidden'); // Remove a classe que oculta o produto
+                        } else {
+                            product.classList.add('hidden'); // Adiciona a classe que oculta o produto
+                        }
+                    }
+                });
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

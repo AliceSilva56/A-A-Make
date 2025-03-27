@@ -1,0 +1,111 @@
+/* Estilo do login */
+
+body {
+    background-color: #bda0a1; /* Rosa antigo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Mantendo a altura da tela */
+    margin: 0;
+}
+.login-container {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px; /* Ajustando o padding */
+    border-radius: 10px; /* Ajustando o border-radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* Adicionando flexbox */
+    flex-direction: column; /* Alinhando os itens em coluna */
+    align-items: center; /* Centralizando os itens */
+    width: 300px; /* Definindo uma largura menor */
+    min-height: 350px; /* Definindo uma altura mínima para acomodar as mensagens de erro */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+}
+
+img {
+    width: 150px; /* Ajustando a largura da logo */
+}
+
+input {
+    width: 90%; /* Mantendo a largura dos inputs */
+    padding: 10px;
+    margin: 15px 0; /* Ajustando a margem */
+    border: 2px solid #d4b5b6; /* Borda rosa antigo */
+    border-radius: 35px;
+    color: #333333; /* Texto cinza escuro */
+}
+button {
+    width: 60%; /* Mantendo a largura do botão */
+    padding: 10px;
+    background-color: #e7cd81; /* Cor vibrante para o botão */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s; /* Transição suave */
+    position: static; /* Garantindo que o botão não saia do container */
+}
+
+button:hover {
+    transform: scale(1.05); /* Aumenta o botão em 5% ao passar o mouse */
+}
+
+/* Estilo das mensagens de erro */
+#username-error, #password-error, #email-error, #name-error, #confirm-password-error, #success-message {
+    color: red; /* Cor vermelha para erros */
+    font-size: 12px; /* Tamanho da fonte */
+    text-align: left; /* Justificando o texto à esquerda */
+    width: 100%; /* Garantindo que ocupe a largura total */
+    margin-top: 5px; /* Espaçamento acima da mensagem de erro */
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Justifica os elementos nas extremidades */
+    width: 85%;
+    margin: 10px 0;
+}
+
+.remember-me .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 5px; /* Espaçamento mínimo entre o checkbox e a label */
+}
+
+.remember-me label {
+    font-size: 14px;
+    color: #333333;
+    margin-left: 0; /* Removendo a margem esquerda da label */
+}
+
+.option-link {
+    color: #e7cd81; /* Cor do link */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.option-link:hover {
+    text-decoration: underline; /* Sublinhar ao passar o mouse */
+}
+
+.create-account {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#title, #subtitle {
+    font-size: 17px; /* Tamanho da fonte */
+    color: #414040; /* Cor do texto */
+    text-align: center; /* Centralizando o texto */
+    margin: 0; /* Removendo o espaçamento padrão */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 5px; /* Espaçamento do topo */
+    margin-bottom: 5px; /* Espaçamento da parte de baixo */
+}
