@@ -19,35 +19,36 @@
   <div class="banner">
 
     <div class="navebar">
-<div class="logo">
-    <img src="assets/img/logo.png" alt="Logo" width="90px">
-</div>
+      <div class="logo">
+        <img src="assets/img/logo.png" alt="Logo" width="90px">
+      </div>
 
-<!-- Menu de navegação -->
-<nav>
-    <ul id="menuItens">
-        <li><a href="tela_principal.html">Home</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="contatos.html">Contato</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Categorias &#x2228;</a>
+      <!-- Menu de navegação -->
+      <nav>
+        <ul id="menuItens">
+          <li><a href="tela_principal.html">Home</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contatos.html">Contato</a></li>
+          <li class="dropdown">
+            <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
             <ul class="dropdown-content">
-                <li><a href="olhos.html">Olhos</a></li>
-                <li><a href="rosto.html">Rosto</a></li>
-                <li><a href="labios.html">Lábios</a></li>
-                <li><a href="acessorios.html">Acessórios</a></li>
+              <li><a href="produtos.html?category=all">Todos</a></li>
+              <li><a href="produtos.html?category=rosto">Rosto</a></li>
+              <li><a href="produtos.html?category=olhos">Olhos</a></li>
+              <li><a href="produtos.html?category=labios">Lábios</a></li>
+              <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
             </ul>
-        </li>
-        <!-- Carrinho -->
-        <li class="cart-icon">
+          </li>
+          <!-- Carrinho -->
+          <li class="cart-icon">
             <a href="#" onclick="toggleCart()">🛒</a>
             <div id="cart" class="cart">
-                <ul id="cartItems"></ul>
+              <ul id="cartItems"></ul>
             </div>
-        </li>
-    </ul>
-</nav>
-</div>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <!--Inicio do container-->
     <div class="container">
@@ -122,6 +123,38 @@
         document.querySelector('.dropdown-content').style.display = 'none';
       }
     });
+
+    // Função para filtrar produtos por categoria
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product');
+      const titulo = document.getElementById('titulo'); // Seleciona o título
+
+      // Atualiza o título com base na categoria selecionada
+      if (category === 'all') {
+        titulo.textContent = 'Produtos Disponíveis';
+      } else if (category === 'rosto') {
+        titulo.textContent = 'Produtos Disponíveis | Categ. Rosto';
+      } else if (category === 'olhos') {
+        titulo.textContent = 'Produtos Disponíveis | Categ. Olhos';
+      } else if (category === 'labios') {
+        titulo.textContent = 'Produtos Disponíveis | Categ. Lábios';
+      } else if (category === 'acessorios') {
+        titulo.textContent = 'Produtos Disponíveis | Categ. Acessórios';
+      }
+
+      // Filtra os produtos com base na categoria
+      products.forEach(product => {
+        if (category === 'all') {
+          product.classList.remove('hidden'); // Remove a classe que oculta o produto
+        } else {
+          if (product.getAttribute('data-category') === category) {
+            product.classList.remove('hidden'); // Remove a classe que oculta o produto
+          } else {
+            product.classList.add('hidden'); // Adiciona a classe que oculta o produto
+          }
+        }
+      });
+    }
   </script>
 
 </body>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/img/Logo.png" type="image/png">
     <link rel="stylesheet" href="assets/css/estilo-produtos.css">
-    <title>Produtos - A&A Make</title>
+    <title>A&A Make Produtos</title>
 </head>
 
 <body>
@@ -1181,6 +1181,20 @@
                         }
                     }
                 });
+            }
+
+            // Função para obter o valor do parâmetro da URL
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Captura a categoria da URL
+            const category = getQueryParam('category');
+
+            // Filtra os produtos com base na categoria capturada
+            if (category) {
+                filterProducts(category);
             }
         </script>
 
