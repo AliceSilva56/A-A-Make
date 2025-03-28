@@ -241,6 +241,7 @@ nav ul li a:hover {
 }
 
 .cart {
+  border-radius: 10px; /* Bordas arredondadas */
   display: none; /* Oculta o carrinho por padrão, ele só será exibido quando necessário */
   position: absolute; /* Posiciona o carrinho em relação ao elemento pai mais próximo com posição relativa */
   top: 40px; /* Define a distância do carrinho em relação ao topo do elemento pai */

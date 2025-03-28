@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/estilo-carrinho.css">
     <title>A&A Make Carrinho</title>
 </head>
+
 <body>
     <div class="banner">
 
@@ -18,34 +20,37 @@
             <!-- Menu de navegação -->
             <nav>
                 <ul id="menuItens">
-                  <li><a href="tela_principal.html">Home</a></li>
-                  <li><a href="produtos.html">Produtos</a></li>
-                  <li><a href="contatos.html">Contato</a></li>
-                  <li class="dropdown">
-                    <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
-                    <ul class="dropdown-content">
-                      <li><a href="produtos.html?category=all">Todos</a></li>
-                      <li><a href="produtos.html?category=rosto">Rosto</a></li>
-                      <li><a href="produtos.html?category=olhos">Olhos</a></li>
-                      <li><a href="produtos.html?category=labios">Lábios</a></li>
-                      <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
-                    </ul>
-                  </li>
+                    <li><a href="tela_principal.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li class="dropdown">
+                        <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
+                        <ul class="dropdown-content">
+                            <li><a href="produtos.html?category=all">Todos</a></li>
+                            <li><a href="produtos.html?category=rosto">Rosto</a></li>
+                            <li><a href="produtos.html?category=olhos">Olhos</a></li>
+                            <li><a href="produtos.html?category=labios">Lábios</a></li>
+                            <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </nav>
+            </nav>
         </div>
 
         <div class="container">
-            <h1>Bem-vindo ao seu carrinho!</h1>
-            <h2>Comece ou finalize sua compra</h2>
+            <h2>Bem-vindo ao seu carrinho!</h2>
 
             <!-- Card de resumo do carrinho -->
             <div class="card">
-                <h3>Resumo do Carrinho</h3>
-                <p>Confira os produtos adicionados ao carrinho e finalize sua compra.</p>
+                <p>
+                    Confira os produtos adicionados ao carrinho e finalize sua compra.
+                    <button id="clearCartButton" onclick="clearCart()" title="Limpar Carrinho"
+                        style="background: none; border: none; cursor: pointer;">
+                        🧹
+                    </button>
+                </p>
 
-                <!-- Lista de produtos no carrinho -->
-                <div id="cartItemsContainer">
+                <div id="cartItemsContainer" class="cart-items-container">
                     <!-- Os itens do carrinho serão adicionados dinamicamente aqui -->
                 </div>
 
@@ -64,62 +69,193 @@
                             <input type="radio" name="payment" value="especie"> Espécie
                         </label>
                     </div>
-                    <button id="finalizeButton" class="finalize-button">Finalizar Compra</button>
+                    <!-- Mensagem de compra finalizada -->
+                    <p id="paymentMessage" class="payment-message" style="display: none;"></p>
+                    <div class="buttons-container">
+                        <button id="finalizeButton" class="finalize-button">Finalizar Compra</button>
+                        <!-- O botão "Pagar" será adicionado dinamicamente aqui -->
+                    </div>
                 </div>
             </div>
         </div>
 
-        <script>
-            // Exemplo de produtos no carrinho
-            const cartItems = [
-                {
-                    image: "assets/img/base-rosto.png",
-                    name: "Base para Rosto",
-                    price: 20.00
-                },
-                {
-                    image: "assets/img/corretivo-primer-rosto.png",
-                    name: "Corretivo e Primer",
-                    price: 20.00
-                }
-            ];
+        <!-- Pop-up para exibir o boleto -->
+        <div id="boletoPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup('boletoPopup')">&times;</span>
+                <h2>Boleto Gerado</h2>
+                <img src="assets/img/boleto.png" alt="Boleto" class="boleto-image">
+                <p>Utilize o código de barras abaixo para realizar o pagamento:</p>
+                <p class="codigo-barras">0779 7777 0521 7431 6966 2185 3900 2362 8104 1000 0005 000</p>
+            </div>
+        </div>
 
+        <!-- Pop-up para exibir o Pix -->
+        <div id="pixPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup('pixPopup')">&times;</span>
+                <h2 class="titulo">Pagamento via Pix</h2>
+                <img src="assets/img/QrCode.jpeg" alt="QR Code Pix" class="boleto-image">
+                <p>Escaneie o QR Code abaixo para realizar o pagamento:</p>
+                <p class="codigo-barras">Chave Pix: 12345678900</p>
+            </div>
+        </div>
+
+        <script>
             // Função para renderizar os itens do carrinho
             function renderCartItems() {
                 const cartItemsContainer = document.getElementById("cartItemsContainer");
                 const totalPriceElement = document.getElementById("totalPrice");
+
+                // Recupera o carrinho do Local Storage ou inicializa como um array vazio
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Limpa o container de itens do carrinho
+                cartItemsContainer.innerHTML = "";
+
                 let total = 0;
 
-                cartItems.forEach(item => {
+                // Renderiza cada item do carrinho
+                cart.forEach(item => {
                     const itemElement = document.createElement("div");
                     itemElement.classList.add("cart-item");
                     itemElement.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-                        <div class="cart-item-info">
-                            <h4>${item.name}</h4>
-                            <p>R$ ${item.price.toFixed(2)}</p>
-                        </div>
-                    `;
+                                                <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                                                <div class="cart-item-info">
+                                                    <h4>${item.name}</h4>
+                                                    <p>R$ ${item.price.toFixed(2)}</p>
+                                                </div>
+                                            `;
                     cartItemsContainer.appendChild(itemElement);
                     total += item.price;
                 });
 
+                // Atualiza o valor total
                 totalPriceElement.textContent = `R$ ${total.toFixed(2)}`;
+
+                // Ajusta o layout para duas colunas se houver mais de 3 produtos
+                if (cart.length > 3) {
+                    cartItemsContainer.classList.add("two-columns");
+                } else {
+                    cartItemsContainer.classList.remove("two-columns");
+                }
             }
 
-            // Inicializa o carrinho
-            renderCartItems();
-
-            // Evento para finalizar a compra
-            document.getElementById("finalizeButton").addEventListener("click", () => {
-                const selectedPayment = document.querySelector('input[name="payment"]:checked');
-                if (!selectedPayment) {
-                    alert("Por favor, selecione uma forma de pagamento.");
-                    return;
-                }
-                alert(`Compra finalizada com sucesso! Forma de pagamento: ${selectedPayment.value}`);
+            // Inicializa o carrinho ao carregar a página
+            document.addEventListener("DOMContentLoaded", () => {
+                renderCartItems();
             });
+            // Função para adicionar um produto ao carrinho
+            function addToCart(product) {
+                // Recupera o carrinho do Local Storage ou inicializa como um array vazio
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Adiciona o produto ao carrinho
+                cart.push(product);
+
+                // Salva o carrinho atualizado no Local Storage
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                alert("Produto adicionado ao carrinho!");
+            }
+
+            // Função para abrir o pop-up do boleto
+            function openBoletoPopup() {
+                const boletoPopup = document.getElementById("boletoPopup");
+                boletoPopup.style.display = "flex"; // Exibe o pop-up
+                selectedPaymentMethod = "Boleto"; // Define a forma de pagamento
+            }
+
+            // Função para abrir o pop-up do Pix
+            function openPixPopup() {
+                const pixPopup = document.getElementById("pixPopup");
+                pixPopup.style.display = "flex"; // Exibe o pop-up
+                selectedPaymentMethod = "Pix"; // Define a forma de pagamento
+            }
+
+            // Função para fechar os pop-ups e exibir a mensagem de "Compra finalizada"
+            function closePopup(popupId) {
+                const popup = document.getElementById(popupId);
+                popup.style.display = "none"; // Oculta o pop-up
+
+                // Exibe a mensagem de "Compra finalizada" no card
+                const totalPrice = document.getElementById("totalPrice").textContent;
+                const paymentMessage = document.getElementById("paymentMessage");
+                paymentMessage.textContent = `Compra finalizada no valor ${totalPrice} com a forma de pagamento: ${selectedPaymentMethod}`;
+                paymentMessage.style.display = "block"; // Exibe a mensagem
+
+                // Oculta a mensagem após 1,5 segundos
+                setTimeout(() => {
+                    paymentMessage.style.display = "none";
+                }, 1500); // 1500ms = 1,5 segundos
+            }
+
+            // Função para exibir o botão "Pagar"
+            function showPaymentButton(paymentMethod) {
+                const buttonsContainer = document.querySelector(".buttons-container");
+                let paymentButton = document.getElementById("paymentButton");
+
+                // Remove o botão "Pagar" se já existir
+                if (paymentButton) {
+                    paymentButton.remove();
+                }
+
+                // Adiciona o botão "Pagar" apenas para Pix ou Boleto
+                if (paymentMethod === "boleto" || paymentMethod === "pix") {
+                    paymentButton = document.createElement("button");
+                    paymentButton.id = "paymentButton";
+                    paymentButton.className = "payment-button";
+                    paymentButton.textContent = "Pagar";
+
+                    // Adiciona o evento de clique ao botão
+                    paymentButton.addEventListener("click", () => {
+                        if (paymentMethod === "boleto") {
+                            openBoletoPopup();
+                        } else if (paymentMethod === "pix") {
+                            openPixPopup();
+                        }
+                    });
+
+                    // Adiciona o botão ao lado do botão "Finalizar Compra"
+                    buttonsContainer.appendChild(paymentButton);
+                }
+            }
+
+            // Evento para monitorar a seleção de forma de pagamento
+            document.querySelectorAll('input[name="payment"]').forEach((input) => {
+                input.addEventListener("change", (event) => {
+                    const selectedPayment = event.target.value;
+                    showPaymentButton(selectedPayment);
+                });
+            });
+
+            // Função para limpar o carrinho
+            function clearCart() {
+                // Remove os itens do Local Storage
+                localStorage.removeItem("cart");
+
+                // Atualiza a interface do carrinho
+                const cartItemsContainer = document.getElementById("cartItemsContainer");
+                const totalPriceElement = document.getElementById("totalPrice");
+
+                // Limpa os itens do carrinho e redefine o total
+                cartItemsContainer.innerHTML = "<p></p>";
+                totalPriceElement.textContent = "R$ 0,00";
+
+                // Exibe uma mensagem de confirmação (opcional)
+                const paymentMessage = document.getElementById("paymentMessage");
+                paymentMessage.textContent = "Carrinho limpo com sucesso!";
+                paymentMessage.style.display = "block";
+
+                // Oculta a mensagem após 1,5 segundos
+                setTimeout(() => {
+                    paymentMessage.style.display = "none";
+                }, 1500); // 1500ms = 1,5 segundos
+            }
+
+
         </script>
     </div>
 </body>
+
 </html>

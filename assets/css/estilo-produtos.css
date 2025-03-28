@@ -70,6 +70,7 @@ body {
   background-color: #ffffff; /* cor de fundo */
   width: 100%; /* ocupa toda a largura da tela */
   margin: 0; /* remove margens */
+  z-index: 1000; /* Garante que a navBar fique acima de outros elementos */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
 
@@ -258,4 +259,16 @@ nav ul li a:hover {
 
 .classificacao icon-icon {
     cursor: default; /* Remove o cursor de interação */
+}
+
+.add-to-cart-message {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #e7f5e6; /* Fundo verde claro */
+    color: #2e7d32; /* Texto verde escuro */
+    border: 1px solid #c8e6c9; /* Borda verde clara */
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
 }

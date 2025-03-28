@@ -798,13 +798,15 @@
         </div>
 
         <!-- Pop-up para descrição do produto -->
-        <div id="productPopup" class="popup">
+              <div id="productPopup" class="popup">
             <div class="popup-content">
                 <span class="close-btn" onclick="closePopup()">&times;</span>
                 <h2 id="popupTitle">Título do Produto</h2>
                 <img id="popupImage" src="" alt="Imagem do Produto">
                 <p id="popupDescription">Descrição detalhada do produto.</p>
                 <p id="popupPrice" class="price">Preço: R$ 0,00</p>
+                <!-- Mensagem de confirmação -->
+                <p id="addToCartMessage" class="add-to-cart-message" style="display: none;"></p>
                 <button id="btn" onclick="addToCart()">Adicionar ao Carrinho</button>
             </div>
         </div>
@@ -1138,18 +1140,33 @@
                 document.querySelector(".container").classList.remove("blur");
             }
 
-            // Função para adicionar ao carrinho
-            function addToCart() {
-                const title = document.getElementById("popupTitle").textContent;
-                const price = document.getElementById("popupPrice").textContent;
-                const cartItems = document.getElementById("cartItems");
-
-                const li = document.createElement("li");
-                li.textContent = `${title} - ${price}`;
-                cartItems.appendChild(li);
-
-                closePopup(); // Fecha o pop-up após adicionar ao carrinho
-            }
+                                          // Função para adicionar um produto ao carrinho
+                    function addToCart() {
+                        const title = document.getElementById("popupTitle").textContent;
+                        const priceText = document.getElementById("popupPrice").textContent;
+                        const price = parseFloat(priceText.replace("Preço: R$ ", "").replace(",", "."));
+                        const image = document.getElementById("popupImage").src;
+                    
+                        // Recupera o carrinho do Local Storage ou inicializa como um array vazio
+                        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                    
+                        // Adiciona o produto ao carrinho
+                        cart.push({ name: title, price: price, image: image });
+                    
+                        // Salva o carrinho atualizado no Local Storage
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                    
+                        // Exibe a mensagem no pop-up
+                        const addToCartMessage = document.getElementById("addToCartMessage");
+                        addToCartMessage.textContent = `Produto "${title}" adicionado ao carrinho!`;
+                        addToCartMessage.style.display = "block";
+                    
+                        // Oculta a mensagem e fecha o pop-up após 1,5 segundos
+                        setTimeout(() => {
+                            addToCartMessage.style.display = "none"; // Oculta a mensagem
+                            closePopup(); // Fecha o pop-up
+                        }, 1000); // 1000ms = 1 segundos
+                    }
 
             // Função para filtrar produtos por categoria
             function filterProducts(category) {
