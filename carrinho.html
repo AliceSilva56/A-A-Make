@@ -17,24 +17,37 @@
                 <img src="assets/img/Logo.bmp" alt="Logo" width="90px">
             </div>
 
-            <!-- Menu de navegação -->
-            <nav>
-                <ul id="menuItens">
-                    <li><a href="tela_principal.html">Home</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contatos.html">Contato</a></li>
-                    <li class="dropdown">
-                        <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
-                        <ul class="dropdown-content">
-                            <li><a href="produtos.html?category=all">Todos</a></li>
-                            <li><a href="produtos.html?category=rosto">Rosto</a></li>
-                            <li><a href="produtos.html?category=olhos">Olhos</a></li>
-                            <li><a href="produtos.html?category=labios">Lábios</a></li>
-                            <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+             <!-- Menu de navegação -->
+      <nav>
+        <ul id="menuItens">
+          <li><a href="tela_principal.html">Home</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contatos.html">Contato</a></li>
+          <li class="dropdown">
+            <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
+            <ul class="dropdown-content">
+              <li><a href="produtos.html?category=all">Todos</a></li>
+              <li><a href="produtos.html?category=rosto">Rosto</a></li>
+              <li><a href="produtos.html?category=olhos">Olhos</a></li>
+              <li><a href="produtos.html?category=labios">Lábios</a></li>
+              <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
+            </ul>
+          </li>
+          <!-- Carrinho -->
+          <li class="cart-icon">
+            <a href="carrinho.html" onclick="toggleCart()">🛒</a>
+            <div id="cart" class="cart">
+              <ul id="cartItems"></ul>
+            </div>
+          </li>
+          <!-- Bolinha de perfil -->
+          <li class="profile-icon">
+            <a href="perfil.html" onclick="abrirBarraLateral()">
+              <img src="assets/img/default-profile.png" alt="Perfil" class="profile-img">
+            </a>
+          </li>
+        </ul>
+      </nav>
         </div>
 
         <div class="container">

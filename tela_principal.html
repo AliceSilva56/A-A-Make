@@ -46,6 +46,12 @@
               <ul id="cartItems"></ul>
             </div>
           </li>
+          <!-- Bolinha de perfil -->
+          <li class="profile-icon">
+            <a href="perfil.html" onclick="abrirBarraLateral()">
+              <img src="assets/img/default-profile.png" alt="Perfil" class="profile-img">
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -59,7 +65,7 @@
         <div class="col-2">
           <h1>Seja bem-vindo a nossa loja virtual</h1>
           <p>Compre os melhores produtos com os melhores preços</p><br>
-          <a href="#" class="btn">Explore agora &#8594;</a>
+          <a href="#categorias" class="btn">Explore agora &#8594;</a>
         </div>
 
         <div class="col-2">
@@ -68,7 +74,7 @@
 
 
         <!--Inicio corpo categorias em destaque -->
-        <div class="categorias">
+        <div class="categorias" id="categorias">
 
           <!--Inicio linha do corpo categorias em destaque -->
           <div class="corpo-categorias">
@@ -96,8 +102,150 @@
             </div>
 
           </div>
+
+          <div class="promocoes">
+            <h2>Promoções da Semana</h2>
+            <div class="linha">
+              <div class="produto-promo"
+                onclick="abrirPopup('Corretivo e Primer', 'assets/img/corretivo-primer-rosto.png', 'De R$ 50,00 por R$ 20,00')">
+                <img src="assets/img/corretivo-primer-rosto.png" alt="Produto em Promoção 1">
+                <h3>Corretivo e Primer</h3>
+                <sub>Categoria Rosto</sub>
+                <p>De <s>R$ 50,00</s> por <strong>R$ 20,00</strong></p>
+                <div class="contador" data-deadline="2025-04-10T23:59:59"></div>
+              </div>
+
+              <div class="produto-promo"
+                onclick="abrirPopup('Sombra Jelly Brilho', 'assets/img/Sombra-Jelly-Brilho-rosto.png', 'De R$ 40,00 por R$ 15,00')">
+                <img src="assets/img/Sombra-Jelly-Brilho-rosto.png" alt="Produto em Promoção 2">
+                <h3>Sombra Jelly Brilho</h3>
+                <sub>Categoria Olhos</sub>
+                <p>De <s>R$ 40,00</s> por <strong>R$ 15,00</strong></p>
+                <div class="contador" data-deadline="2025-04-15T23:59:59"></div>
+              </div>
+
+              <div class="produto-promo"
+                onclick="abrirPopup('Gloss Labial Glow', 'assets/img/Gloss-Labial-Glow-labios.png', 'De R$ 30,00 por R$ 10,00')">
+                <img src="assets/img/Gloss-Labial-Glow-labios.png" alt="Produto em Promoção 3">
+                <h3>Gloss Labial Glow</h3>
+                <sub>Categoria Lábios</sub>
+                <p>De <s>R$ 30,00</s> por <strong>R$ 10,00</strong></p>
+                <div class="contador" data-deadline="2025-04-20T23:59:59"></div>
+              </div>
+
+              <div class="produto-promo"
+                onclick="abrirPopup('Kit Pinceis Espelho', 'assets/img/kit-pinceis_espelho.png', 'De R$ 35,00 por R$ 15,00')">
+                <img src="assets/img/kit-pinceis_espelho.png" alt="Produto em Promoção 4">
+                <h3>kit Pinceis e Espelho</h3>
+                <sub>Categoria Acessórios</sub>
+                <p>De <s>R$ 35,00</s> por <strong>R$ 15,00</strong></p>
+                <div class="contador" data-deadline="2025-04-25T23:59:59"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produtos em destaque -->
+          <div class="produtos-destaque">
+            <h2>Produtos em Destaque</h2>
+            <div class="linha">
+
+              <!-- Produto 1 -->
+              <div class="produto col-3">
+                <img src="assets/img/base-rosto.png" alt="Produto 1">
+                <h3>Base Ruby Rose</h3>
+                <sub>Categoria: Rosto</sub>
+                <div class="estrelas">
+                  ★★★★☆
+                </div>
+                <p>R$ 20,00</p>
+              </div>
+
+              <!-- Produto 2 -->
+              <div class="produto col-3">
+                <img src="assets/img/delineador-olhos.png" alt="Produto 2">
+                <h3>Delineador</h3>
+                <sub>Categoria: Olhos</sub>
+                <div class="estrelas">
+                  ★★★★★
+                </div>
+                <p>R$ 22,00</p>
+              </div>
+
+              <!-- Produto 3 -->
+              <div class="produto col-3">
+                <img src="assets/img/NIVEA-Hidratante-LabialeSheglam-labios.png" alt="Produto 3">
+                <h3>gloss e Hidratante Labial</h3>
+                <sub>Categoria: Lábios</sub>
+                <div class="estrelas">
+                  ★★★★☆
+                </div>
+                <p>R$ 19,00</p>
+              </div>
+
+              <!-- Produto 4 -->
+              <div class="produto col-3">
+                <img src="assets/img/organizador-maquiagem.png" alt="Produto 4">
+                <h3>Organizador de Maquiagem</h3>
+                <sub>Categoria: Acessórios</sub>
+                <div class="estrelas">
+                  ★★★★☆
+                </div>
+                <p>R$ 25,00</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimentos">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="linha">
+              <div class="depoimento">
+                <p>"Produtos incríveis e entrega rápida! Recomendo."</p>
+                <div class="estrelas">
+                  ★★★★★
+                </div>
+                <h4>- Maria Silva</h4>
+              </div>
+              <div class="depoimento">
+                <p>"A qualidade dos produtos é excelente. Voltarei a comprar!"</p>
+                <div class="estrelas">
+                  ★★★★★
+                </div>
+                <h4>- João Santos</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="marcas">
+            <h2>Marcas Parceiras</h2>
+            <div class="linha">
+              <img src="assets/img/RubyRose.png" alt="Marca 1">
+              <img src="assets/img/Sheglam.png" alt="Marca 2">
+              <img src="assets/img/Melu.png" alt="Marca 3">
+            </div>
+          </div>
+
+          <div class="newsletter">
+            <h2>Receba nossas novidades</h2>
+            <form>
+              <input type="email" placeholder="Digite seu e-mail" required>
+              <button type="submit">Inscrever-se</button>
+            </form>
+          </div>
         </div>
       </div> <!--Inicio corpo categorias em destaque -->
+    </div>
+  </div>
+  </div>
+
+   <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close" onclick="fecharPopup()">&times;</span>
+      <img id="popup-img" src="" alt="Imagem do Produto">
+      <h3 id="popup-title"></h3>
+      <p id="popup-price"></p>
+      <!-- Mensagem de confirmação -->
+      <p id="addToCartMessage" class="add-to-cart-message" style="display: none;">Produto adicionado!</p>
+      <button class="btn" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
     </div>
   </div>
 
@@ -108,6 +256,69 @@
   <script src="assets/js/script.js"></script>
 
   <script>
+
+    function abrirPopup(titulo, imagem, preco) {
+      const popup = document.getElementById('popup');
+      const popupImg = document.getElementById('popup-img');
+      const popupTitle = document.getElementById('popup-title');
+      const popupPrice = document.getElementById('popup-price');
+
+      popupImg.src = imagem;
+      popupTitle.textContent = titulo;
+      popupPrice.textContent = preco;
+
+      popup.classList.remove('hidden');
+    }
+
+    function fecharPopup() {
+      const popup = document.getElementById('popup');
+      popup.classList.add('hidden');
+    }
+
+    function adicionarAoCarrinho() {
+      const addToCartMessage = document.getElementById('addToCartMessage');
+
+      // Exibe a mensagem de confirmação
+      addToCartMessage.style.display = 'block';
+
+      // Aguarda 1,5 segundos antes de fechar o popup
+      setTimeout(() => {
+        addToCartMessage.style.display = 'none'; // Oculta a mensagem
+        fecharPopup(); // Fecha o popup
+      }, 1000);
+    }
+
+    function fecharPopup() {
+      const popup = document.getElementById('popup');
+      popup.classList.add('hidden');
+    }
+
+    // Atualiza todos os contadores de promoções
+    function atualizarTodosOsContadores() {
+      const contadores = document.querySelectorAll('.contador');
+
+      contadores.forEach(contador => {
+        const deadline = new Date(contador.getAttribute('data-deadline')).getTime();
+        const agora = new Date().getTime();
+        const diferenca = deadline - agora;
+
+        if (diferenca > 0) {
+          const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+          const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+          const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+          contador.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+        } else {
+          contador.innerHTML = "Promoção encerrada!";
+        }
+      });
+    }
+
+    // Atualiza os contadores a cada segundo
+    setInterval(atualizarTodosOsContadores, 1000);
+
+
     // Alterna a exibição do menu suspenso ao clicar no botão
     document.querySelector('.dropbtn').addEventListener('click', function (e) {
       e.preventDefault(); // Evita o comportamento padrão do link

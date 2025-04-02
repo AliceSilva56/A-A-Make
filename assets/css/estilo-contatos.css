@@ -264,3 +264,16 @@ nav ul li a:hover {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
+
+
+/* Estilo da bolinha de perfil */
+.profile-icon {
+  position: relative;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/estilo-perfil.css">
+  <title>Perfil do Usuário</title>
+</head>
+
+<body>
+ 
+    <div class="banner">
+
+        <div class="navebar">
+            <div class="logo">
+                <img src="assets/img/Logo.bmp" alt="Logo" width="90px">
+            </div>
+
+             <!-- Menu de navegação -->
+      <nav>
+        <ul id="menuItens">
+          <li><a href="tela_principal.html">Home</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contatos.html">Contato</a></li>
+          <li class="dropdown">
+            <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
+            <ul class="dropdown-content">
+              <li><a href="produtos.html?category=all">Todos</a></li>
+              <li><a href="produtos.html?category=rosto">Rosto</a></li>
+              <li><a href="produtos.html?category=olhos">Olhos</a></li>
+              <li><a href="produtos.html?category=labios">Lábios</a></li>
+              <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
+            </ul>
+          </li>
+          <!-- Carrinho -->
+          <li class="cart-icon">
+            <a href="carrinho.html" onclick="toggleCart()">🛒</a>
+            <div id="cart" class="cart">
+              <ul id="cartItems"></ul>
+            </div>
+          </li>
+          <!-- Bolinha de perfil -->
+          <li class="profile-icon">
+            <a href="perfil.html" onclick="abrirBarraLateral()">
+              <img src="assets/img/default-profile.png" alt="Perfil" class="profile-img">
+            </a>
+          </li>
+        </ul>
+      </nav>
+        </div>
+
+  
+    <div class="perfil-container">
+      <h1>Perfil do Usuário</h1>
+      <div class="perfil">
+        <img id="imagemPerfil" src="assets/img/default-profile.png" alt="Imagem de Perfil">
+        <button class="btn" onclick="abrirSelecaoPersonagem()">Alterar Personagem</button>
+      </div>
+
+        <form>
+          <div class="linha-form">
+            <div class="campo">
+              <label>Nome:</label>
+              <span class="editar" onclick="editarCampo('nome')">&#9998;</span>
+              <input type="text" id="nome" value="Alice">
+            </div>
+            <div class="campo">
+              <label>Sobrenome:</label>
+              <span class="editar" onclick="editarCampo('sobrenome')">&#9998;</span>
+              <input type="text" id="sobrenome" value="Silva">
+            </div>
+          </div>
+        
+          <div class="linha-form">
+            <div class="campo">
+              <label>Email:</label>
+              <input type="email" id="email" value="alice@email.com" disabled>
+            </div>
+            <div class="campo">
+              <label>Senha:</label>
+              <input type="password" id="senha" value="********" disabled>
+            </div>
+          </div>
+        
+          <div class="linha-form">
+            <div class="campo">
+              <label>Telefone:</label>
+              <span class="editar" onclick="editarCampo('telefone')">&#9998;</span>
+              <input type="text" id="telefone" value="(11) 99999-9999">
+            </div>
+            <div class="campo">
+              <label>CEP:</label>
+              <span class="editar" onclick="editarCampo('cep')">&#9998;</span>
+              <input type="text" id="cep" value="12345-678">
+            </div>
+          </div>
+        
+          <div class="linha-form">
+            <div class="campo">
+              <label>Endereço:</label>
+              <span class="editar" onclick="editarCampo('endereco')">&#9998;</span>
+              <input type="text" id="endereco" value="Rua das Flores, 123">
+            </div>
+            <div class="campo">
+              <label>Referências:</label>
+              <span class="editar" onclick="editarCampo('referencias')">&#9998;</span>
+              <input type="text" id="referencias" value="Apartamento 101">
+            </div>
+          </div>
+        </form>
+
+      <button class="btn sair" onclick="confirmarSaida()">Sair</button>
+    </div>
+ 
+
+  <!-- Popup de confirmação de saída -->
+  <div id="popupSair" class="popup hidden">
+    <div class="popup-content">
+      <span class="close" onclick="fecharPopupSair()">&times;</span>
+      <h3>Tem certeza que deseja sair?</h3>
+      <button class="btn" onclick="sair()">Sim, Tchau</button>
+      <button class="btn" onclick="fecharPopupSair()">Não, vou ficar mais um pouco</button>
+    </div>
+  </div>
+
+  <!-- Seletor de personagens -->
+  <div id="seletorPersonagem" class="popup hidden">
+    <div class="popup-content">
+      <span class="close" onclick="fecharSelecaoPersonagem()">&times;</span>
+      <h3>Escolha seu personagem</h3>
+      <div class="personagens">
+        <img src="assets/img/personagem1.png" alt="Personagem 1" onclick="alterarImagemPerfil('assets/img/personagem1.png')">
+        <img src="assets/img/personagem2.png" alt="Personagem 2" onclick="alterarImagemPerfil('assets/img/personagem2.png')">
+        <img src="assets/img/personagem3.png" alt="Personagem 3" onclick="alterarImagemPerfil('assets/img/personagem3.png')">
+        <img src="assets/img/personagem4.png" alt="Personagem 4" onclick="alterarImagemPerfil('assets/img/personagem4.png')">
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+        function editarCampo(campoId) {
+      const campo = document.getElementById(campoId);
+      campo.disabled = false;
+      campo.focus();
+    }
+    
+    function confirmarSaida() {
+      document.getElementById('popupSair').classList.remove('hidden');
+    }
+    
+    function fecharPopupSair() {
+      document.getElementById('popupSair').classList.add('hidden');
+    }
+    
+    function sair() {
+      alert('Você saiu!');
+      fecharPopupSair();
+    }
+    
+    function abrirSelecaoPersonagem() {
+      document.getElementById('seletorPersonagem').classList.remove('hidden');
+    }
+    
+    function fecharSelecaoPersonagem() {
+      document.getElementById('seletorPersonagem').classList.add('hidden');
+    }
+    
+    function alterarImagemPerfil(imagem) {
+      document.getElementById('imagemPerfil').src = imagem;
+      fecharSelecaoPersonagem();
+    }
+  </script>
+</body>
+
+</html>
