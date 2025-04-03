@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/estilo-perfil.css">
+  <link rel="icon" href="assets/img/Logo.bmp" type="image/png">
   <title>Perfil do Usuário</title>
 </head>
 
@@ -54,7 +55,7 @@
     <div class="perfil-container">
       <h1>Perfil do Usuário</h1>
       <div class="perfil">
-        <img id="imagemPerfil" src="assets/img/default-profile.png" alt="Imagem de Perfil">
+        <img id="imagemPerfil" src="assets/img/perfil.png" alt="Imagem de Perfil">
         <button class="btn" onclick="abrirSelecaoPersonagem()">Alterar Personagem</button>
       </div>
 
@@ -167,8 +168,14 @@
       document.getElementById('seletorPersonagem').classList.add('hidden');
     }
     
-    function alterarImagemPerfil(imagem) {
+        function alterarImagemPerfil(imagem) {
+      // Atualiza a imagem no card de perfil
       document.getElementById('imagemPerfil').src = imagem;
+    
+      // Atualiza a imagem na bolinha de perfil na barra de navegação
+      document.getElementById('bolinhaPerfil').src = imagem;
+    
+      // Fecha o seletor de personagens
       fecharSelecaoPersonagem();
     }
   </script>

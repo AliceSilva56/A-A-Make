@@ -8,25 +8,32 @@
 
 
 body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d4b5b6;
   font-family: 'Poppins', sans-serif;
 }
 
-.banner {
-    background-color: #d4b5b6;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
 .banner .linha {
   margin-top: 70px;
 }
 
-.container {
-  max-width: 1300px;
-  margin:  auto;
-  padding-left: 25px;
-  padding-right: 25px;
-  /* position: relative; */
 
-}
 
 /* Estilo da navegação */
 .navebar {
@@ -112,15 +119,17 @@ nav ul li a:hover {
 
 /* Estilo para o container do perfil */
 .perfil-container {
-  margin-top: 20px; /* Espaço para garantir que o card fique abaixo da nav */
+  margin-top: 35px; /* Espaço para garantir que o card fique abaixo da nav */
   max-width: 600px; /* Largura máxima do card */
   margin-left: auto;
   margin-right: auto;
   background: #f9f9f9; /* Cor de fundo semelhante ao card de contatos */
-  padding: 20px; /* Espaçamento interno */
+  padding: 10px; /* Espaçamento interno */
   border-radius: 8px; /* Bordas arredondadas */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
   border: 1px solid #ddd; /* Borda leve */
+  margin-top: 130px;
+
 }
 
 .perfil-container h1 {
@@ -295,4 +304,13 @@ form .sair {
   border-radius: 50%;
   margin: 10px;
   cursor: pointer;
+}
+
+button {
+  background: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 7px 20px;
+  cursor: pointer;
+  border-radius: 4px;
 }
