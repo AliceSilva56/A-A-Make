@@ -23,8 +23,8 @@
         <img src="assets/img/Logo.bmp" alt="Logo" width="90px">
       </div>
 
-       <!-- Menu de navegação -->
-       <nav>
+      <!-- Menu de navegação -->
+      <nav>
         <ul id="menuItens">
           <li><a href="tela_principal.html">Home</a></li>
           <li><a href="produtos.html">Produtos</a></li>
@@ -32,12 +32,17 @@
           <li class="dropdown">
             <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
             <ul class="dropdown-content">
-              <li><a href="produtos.html?category=all">Todos</a></li>
+              <li><a href="produtos.html?">Todos</a></li>
               <li><a href="produtos.html?category=rosto">Rosto</a></li>
               <li><a href="produtos.html?category=olhos">Olhos</a></li>
               <li><a href="produtos.html?category=labios">Lábios</a></li>
               <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
             </ul>
+          </li>
+          <li class="search-bar">
+            <form action="produtos.html" method="get">
+              <input type="text" name="busca" placeholder="Buscar produtos...">
+            </form>
           </li>
           <!-- Carrinho -->
           <li class="cart-icon">
@@ -116,6 +121,11 @@
             </a>
           </li>
         </ul>
+
+        <div class="footer">
+          <p>&copy; 2025 A&A Make. Todos os direitos reservados.</p>
+          <p>Desenvolvido por: Alice ❦︎</p>
+        </div>
       </footer>
 
     </div>
@@ -235,7 +245,21 @@
   </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nomeUsuario = localStorage.getItem("nomeUsuario");
+      if (nomeUsuario) {
+        const nome = nomeUsuario.split(" ")[0];
+        const profileItem = document.querySelector(".profile-icon");
+        profileItem.innerHTML = `<a href="perfil.html">Olá, ${nome}</a>`;
+      }
+    });
+  </script>
 </body>
 
 </html>
+
+<!--Nome do arquivo: contatos.html
+Descrição: Página de cantatos da loja A&A Make.
+Autor: Alice ❦︎
+Data de Finalização: 15/5/2025 -->

@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/Logo.bmp" type="image/png"> <!-- Adicionando o favicon -->
-    <link rel="stylesheet" href="assets/css/estilo-registro.css"> <!-- Reutilizando o estilo do registro -->
-    <title>Registrar - A&A Make</title>
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/img/Logo.bmp" type="image/png">
+  <link rel="stylesheet" href="assets/css/estilo-registro.css">
+  <title>Registrar - A&A Make</title>
 </head>
 
 <body>
-    <div class="login-container">
-        <img src="assets/img/Logo.png" alt="Logo"> <!-- Logo acima do título -->
-        
-            <h3 id="subtitle">Seja bem-vindo(a) A&A Make!</h3>
-            <h3 id="title">Crie sua Conta</h3>
+  <div class="login-container">
+    <img src="assets/img/Logo.png" alt="Logo">
+    <h3 id="subtitle">Seja bem-vindo(a) A&A Make!</h3>
+    <h3 id="title">Crie sua Conta</h3>
 
-        <input id="name" type="text" placeholder="Nome completo" required>
-        <div id="name-error" style="color: red;"></div>
+    <input id="name" type="text" placeholder="Nome completo" required>
+    <div id="name-error" style="color: red;"></div>
 
-        <input id="email" type="email" placeholder="Email" required>
-        <div id="email-error" style="color: red;"></div>
+    <input id="email" type="email" placeholder="Email" required>
+    <div id="email-error" style="color: red;"></div>
 
-        <input id="username" type="text" placeholder="Username" required>
-        <div id="username-error" style="color: red;"></div>
+    <input id="username" type="text" placeholder="Username" required>
+    <div id="username-error" style="color: red;"></div>
 
-        <input id="password" type="password" placeholder="Senha" required>
-        <div id="password-error" style="color: red;"></div>
+    <input id="password" type="password" placeholder="Senha" required>
+    <div id="password-error" style="color: red;"></div>
 
-        <input id="confirm-password" type="password" placeholder="Confirmar senha" required>
-        <div id="confirm-password-error" style="color: red;"></div>
+    <input id="confirm-password" type="password" placeholder="Confirmar senha" required>
+    <div id="confirm-password-error" style="color: red;"></div>
 
-        <div id="success-message" style="color: #e7cd81;"></div> <!-- Mensagem de sucesso -->
-        <button type="button" onclick="registrar()">Registrar</button> <!-- Chama a função de registro -->
+    <div id="success-message" style="color: #e7cd81;"></div>
+    <button type="button" onclick="registrar()">Registrar</button>
 
-        
-        <a href="index.html" class="option-link">Já tem uma conta? Faça login</a>
-    </div>
+    <a href="index.html" class="option-link">Já tem uma conta? Faça login</a>
+  </div>
 
-    <script src="assets/script/script_registra.js"></script>
+  <script>
+    function registrar() {
+      const nome = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const username = document.getElementById("username").value;
+      const senha = document.getElementById("password").value;
+      const confirmarSenha = document.getElementById("confirm-password").value;
+
+      if (!nome || !email || !username || !senha || !confirmarSenha) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+      if (senha !== confirmarSenha) {
+        alert("As senhas não coincidem.");
+        return;
+      }
+
+      localStorage.setItem("nomeUsuario", nome);
+      localStorage.setItem("emailUsuario", email);
+      localStorage.setItem("senhaUsuario", senha);
+
+      alert("Conta criada com sucesso!");
+      window.location.href = "perfil.html";
+    }
+  </script>
 </body>
+
 </html>
+
+<!--Nome do arquivo: registra.html - Registro 
+ Descrição: Página de registro da loja A&A Make.
+Autor: Alice ❦︎
+Data de Finalização: 15/5/2025 -->

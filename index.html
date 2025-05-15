@@ -1,40 +1,56 @@
-<!-- Tela de login -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/Logo.bmp" type="image/png"> <!-- Adicionando o favicon -->
-    <link rel="stylesheet" href="assets/css/estilo-login.css"> <!-- Referenciando o arquivo CSS -->
-    <title>A&A Make</title>
-    <script src="assets/script/script_login.js" defer></script> <!-- Referenciando o arquivo JavaScript -->
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/img/Logo.bmp" type="image/png">
+  <link rel="stylesheet" href="assets/css/estilo-login.css">
+  <title>A&A Make</title>
 </head>
+
 <body>
-    <div class="login-container">
-        <img src="assets/img/Logo.png" alt="Logo"> <!-- Logo acima do título -->
+  <div class="login-container">
+    <img src="assets/img/Logo.png" alt="Logo">
+    <h3 id="title"> Seja bem-vindo!</h3>
+    <h3 id="subtitle">Faça seu Login</h3>
 
-        <h3 id="title"> Seja bem-vindo!</h3>
-        <h3 id="subtitle">Faça seu Login</h3>
+    <input type="text" placeholder="Username" required>
+    <div id="username-error" style="color: red; font-size: 11px;"></div>
+    <input type="password" placeholder="Password" required>
+    <div id="password-error" style="color: red; font-size: 12px;"></div>
 
-        <input type="text" placeholder="Username" required>
-        <div id="username-error" style="color: red; font-size: 11px;"></div> <!-- Mensagem de erro para o username -->
-        <input type="password" placeholder="Password" required>
-        <div id="password-error" style="color: red; font-size: 12px;"></div> <!-- Mensagem de erro para a senha -->
-        <div class="remember-me">
-            <div class="checkbox-container">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Lembrar-me</label>
-            </div>
-            <a href="#" class="option-link">Esqueci minha senha</a>
-        </div>
-
-        
-        <button type="button" onclick="login()">Entrar</button> <!-- Chama a função de login -->
-        <a href="registra.html" class="option-link create-account">Criar conta</a>
-
-       
+    <div class="remember-me">
+      <div class="checkbox-container">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Lembrar-me</label>
+      </div>
+      <a href="#" class="option-link">Esqueci minha senha</a>
     </div>
 
+    <button type="button" onclick="login()">Entrar</button>
+    <a href="registra.html" class="option-link create-account">Criar conta</a>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.querySelector('input[placeholder="Username"]').value;
+      const senha = document.querySelector('input[placeholder="Password"]').value;
+
+      if (username && senha) {
+        localStorage.setItem("nomeUsuario", username);
+        localStorage.setItem("emailUsuario", `${username}@email.com`);
+        localStorage.setItem("senhaUsuario", senha);
+        window.location.href = "perfil.html";
+      } else {
+        alert("Preencha todos os campos para entrar.");
+      }
+    }
+  </script>
 </body>
+
 </html>
+<!--Nome do arquivo: index.html - Login
+Descrição: Página de login da loja A&A Make.
+Autor: Alice ❦︎
+Data de Finalização: 15/5/2025 -->

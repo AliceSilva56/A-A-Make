@@ -10,15 +10,11 @@
 </head>
 
 <body>
- 
-    <div class="banner">
-
-        <div class="navebar">
-            <div class="logo">
-                <img src="assets/img/Logo.bmp" alt="Logo" width="90px">
-            </div>
-
-             <!-- Menu de navegação -->
+  <div class="banner">
+    <div class="navebar">
+      <div class="logo">
+        <img src="assets/img/Logo.bmp" alt="Logo" width="90px">
+      </div>
       <nav>
         <ul id="menuItens">
           <li><a href="tela_principal.html">Home</a></li>
@@ -34,12 +30,13 @@
               <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
             </ul>
           </li>
-          <!-- Carrinho -->
+          <li class="search-bar">
+            <form action="produtos.html" method="get">
+              <input type="text" name="busca" placeholder="Buscar produtos...">
+            </form>
+          </li>
           <li class="cart-icon">
-            <a href="carrinho.html" onclick="toggleCart()">🛒</a>
-            <div id="cart" class="cart">
-              <ul id="cartItems"></ul>
-            </div>
+            <a href="carrinho.html">🛒</a>
           </li>
           <!-- Bolinha de perfil -->
           <li class="profile-icon">
@@ -49,71 +46,90 @@
           </li>
         </ul>
       </nav>
-        </div>
+    </div>
 
-  
     <div class="perfil-container">
-      <h1>Perfil do Usuário</h1>
       <div class="perfil">
-        <img id="imagemPerfil" src="assets/img/perfil.png" alt="Imagem de Perfil">
-        <button class="btn" onclick="abrirSelecaoPersonagem()">Alterar Personagem</button>
+        <img id="imagemPerfil" src="assets/img/PerfilNav.png" alt="Img de Perfil">
+        <div class="camera-icon" onclick="abrirSelecaoPersonagem()"></div>
       </div>
 
-        <form>
+      <form>
+        <div class="linha-form">
+          <div class="campo">
+            <label>Nome:</label>
+            <span class="editar" onclick="editarCampo('nome')">&#9998;</span>
+            <input type="text" id="nome" value="Alice">
+          </div>
+
+          <div class="campo">
+            <label>Telefone:</label>
+            <span class="editar" onclick="editarCampo('telefone')">&#9998;</span>
+            <input type="text" id="telefone" value="(11) 99999-9999">
+          </div>
+
+        </div>
+
+        <div class="linha-form">
+          <div class="campo">
+            <label>Email:</label>
+            <span class="editar" onclick="habilitarEdicaoComConfirmacao('email')">✎</span>
+            <input type="email" id="email" value="alice@email.com" disabled>
+          </div>
+
+          <div class="campo">
+            <label>Senha:</label>
+            <span class="editar" onclick="habilitarEdicaoComConfirmacao('senha')">✎</span>
+            <input type="password" id="senha" value="********" disabled>
+          </div>
+        </div>
+
+        <div class="linha-form">
+          <div class="campo">
+            <label>Endereço:</label>
+            <span class="editar" onclick="editarCampo('endereco')">&#9998;</span>
+            <input type="text" id="endereco" value="Rua das Flores, 123">
+          </div>
+
+          <div class="campo">
+            <label>CEP:</label>
+            <span class="editar" onclick="editarCampo('cep')">&#9998;</span>
+            <input type="text" id="cep" value="12345-678">
+          </div>
+        </div>
+
+        <div class="linha-form">
+          <!-- Novo Campo Número -->
           <div class="linha-form">
             <div class="campo">
-              <label>Nome:</label>
-              <span class="editar" onclick="editarCampo('nome')">&#9998;</span>
-              <input type="text" id="nome" value="Alice">
+              <label>Número:</label>
+              <span class="editar" onclick="editarCampo('numero')">&#9998;</span>
+              <input type="text" id="numero" value="123">
             </div>
+
             <div class="campo">
-              <label>Sobrenome:</label>
-              <span class="editar" onclick="editarCampo('sobrenome')">&#9998;</span>
-              <input type="text" id="sobrenome" value="Silva">
+              <label>Cidade:</label>
+              <span class="editar" onclick="editarCampo('cidade')">&#9998;</span>
+              <input type="text" id="cidade" value="São Paulo">
             </div>
           </div>
-        
-          <div class="linha-form">
-            <div class="campo">
-              <label>Email:</label>
-              <input type="email" id="email" value="alice@email.com" disabled>
-            </div>
-            <div class="campo">
-              <label>Senha:</label>
-              <input type="password" id="senha" value="********" disabled>
-            </div>
-          </div>
-        
-          <div class="linha-form">
-            <div class="campo">
-              <label>Telefone:</label>
-              <span class="editar" onclick="editarCampo('telefone')">&#9998;</span>
-              <input type="text" id="telefone" value="(11) 99999-9999">
-            </div>
-            <div class="campo">
-              <label>CEP:</label>
-              <span class="editar" onclick="editarCampo('cep')">&#9998;</span>
-              <input type="text" id="cep" value="12345-678">
-            </div>
-          </div>
-        
-          <div class="linha-form">
-            <div class="campo">
-              <label>Endereço:</label>
-              <span class="editar" onclick="editarCampo('endereco')">&#9998;</span>
-              <input type="text" id="endereco" value="Rua das Flores, 123">
-            </div>
+
+          <div>
+
             <div class="campo">
               <label>Referências:</label>
               <span class="editar" onclick="editarCampo('referencias')">&#9998;</span>
               <input type="text" id="referencias" value="Apartamento 101">
             </div>
-          </div>
-        </form>
 
-      <button class="btn sair" onclick="confirmarSaida()">Sair</button>
+          </div>
+
+      </form>
+
+
     </div>
- 
+    <button class="btn sair" onclick="confirmarSaida()">Sair</button>
+  </div>
 
   <!-- Popup de confirmação de saída -->
   <div id="popupSair" class="popup hidden">
@@ -131,54 +147,119 @@
       <span class="close" onclick="fecharSelecaoPersonagem()">&times;</span>
       <h3>Escolha seu personagem</h3>
       <div class="personagens">
-        <img src="assets/img/personagem1.png" alt="Personagem 1" onclick="alterarImagemPerfil('assets/img/personagem1.png')">
-        <img src="assets/img/personagem2.png" alt="Personagem 2" onclick="alterarImagemPerfil('assets/img/personagem2.png')">
-        <img src="assets/img/personagem3.png" alt="Personagem 3" onclick="alterarImagemPerfil('assets/img/personagem3.png')">
-        <img src="assets/img/personagem4.png" alt="Personagem 4" onclick="alterarImagemPerfil('assets/img/personagem4.png')">
+        <img src="assets/img/personagem1.png" alt="Personagem 1"
+          onclick="alterarImagemPerfil('assets/img/personagem1.png')">
+        <img src="assets/img/personagem2.png" alt="Personagem 2"
+          onclick="alterarImagemPerfil('assets/img/personagem2.png')">
+        <img src="assets/img/personagem3.png" alt="Personagem 3"
+          onclick="alterarImagemPerfil('assets/img/personagem3.png')">
+        <img src="assets/img/personagem4.png" alt="Personagem 4"
+          onclick="alterarImagemPerfil('assets/img/personagem4.png')">
       </div>
     </div>
   </div>
 
-  <script>
 
-        function editarCampo(campoId) {
+  <script>
+    function editarCampo(campoId) {
       const campo = document.getElementById(campoId);
       campo.disabled = false;
       campo.focus();
     }
-    
+
+    function habilitarEdicaoComConfirmacao(campoId) {
+      const campo = document.getElementById(campoId);
+      campo.disabled = false;
+      campo.focus();
+
+      campo.addEventListener("blur", () => {
+        const novoValor = campo.value;
+        const confirmacao = confirm(`Deseja salvar as alterações no campo ${campoId}?`);
+        if (confirmacao) {
+          const usuario = JSON.parse(localStorage.getItem("usuario")) || {};
+          usuario[campoId] = novoValor;
+          localStorage.setItem("usuario", JSON.stringify(usuario));
+          campo.disabled = true;
+        } else {
+          campo.value = JSON.parse(localStorage.getItem("usuario"))[campoId] || campo.defaultValue;
+          campo.disabled = true;
+        }
+      }, { once: true });
+    }
+
     function confirmarSaida() {
-      document.getElementById('popupSair').classList.remove('hidden');
+      const confirmar = confirm("Tem certeza que deseja sair?");
+      if (confirmar) {
+        window.location.href = "login.html";
+      }
     }
-    
-    function fecharPopupSair() {
-      document.getElementById('popupSair').classList.add('hidden');
-    }
-    
-    function sair() {
-      alert('Você saiu!');
-      fecharPopupSair();
-    }
-    
+
     function abrirSelecaoPersonagem() {
       document.getElementById('seletorPersonagem').classList.remove('hidden');
     }
-    
+
     function fecharSelecaoPersonagem() {
       document.getElementById('seletorPersonagem').classList.add('hidden');
     }
-    
-        function alterarImagemPerfil(imagem) {
+
+    function alterarImagemPerfil(imagem) {
       // Atualiza a imagem no card de perfil
       document.getElementById('imagemPerfil').src = imagem;
-    
+
       // Atualiza a imagem na bolinha de perfil na barra de navegação
       document.getElementById('bolinhaPerfil').src = imagem;
-    
+
       // Fecha o seletor de personagens
       fecharSelecaoPersonagem();
     }
+
+    // Função para validar o formato do telefone
+    function validarTelefone(telefone) {
+      const regex = /^\(\d{2}\) \d{5}-\d{4}$/;
+      return regex.test(telefone);
+    }
+
+    document.getElementById('cep').addEventListener('blur', async function () {
+      const cep = this.value.replace(/\D/g, '');
+      const enderecoInput = document.getElementById('endereco');
+
+      if (cep.length === 8) {
+        try {
+          const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+          const data = await response.json();
+
+          if (data.erro) throw new Error("CEP inválido");
+
+          enderecoInput.value = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+        } catch {
+          const ruas = ["Travessa do Batom", "Alameda da Beleza", "Rua do Iluminador"];
+          const bairros = ["Centro Fashion", "Bairro MakeUp", "Vila Glam"];
+          const cidades = ["Maquiagem City", "Beautytown", "Glamourópolis"];
+          const estados = ["SP", "RJ", "BA", "MG", "RS"];
+
+          const fakeEndereco = `${ruas[Math.floor(Math.random() * ruas.length)]}, ${bairros[Math.floor(Math.random() * bairros.length)]}, ${cidades[Math.floor(Math.random() * cidades.length)]} - ${estados[Math.floor(Math.random() * estados.length)]}`;
+          enderecoInput.value = fakeEndereco;
+        }
+      } else {
+        enderecoInput.value = "";
+        alert("CEP inválido (deve conter 8 dígitos)");
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nomeUsuario = localStorage.getItem("nomeUsuario");
+      if (nomeUsuario) {
+        const nome = nomeUsuario.split(" ")[0];
+        const profileItem = document.querySelector(".profile-icon");
+        profileItem.innerHTML = `<a href="perfil.html">Olá, ${nome}</a>`;
+      }
+    });
   </script>
 </body>
 
 </html>
+<!--Nome do arquivo: perfil.html
+Descrição: Página de perfil da loja A&A Make.
+Autor: Alice ❦︎
+Data de Finalização: 15/5/2025 -->

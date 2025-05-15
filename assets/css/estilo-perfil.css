@@ -33,71 +33,70 @@ body {
   margin-top: 70px;
 }
 
-
-
-/* Estilo da navegação */
 .navebar {
-  position: fixed; /* Fixa a navegação no topo */
-  top: 0;
-  left: 0;
-  width: 100%; /* Faz a navegação ocupar toda a largura */
-  background-color: #ffffff; /* Cor de fundo */
-  z-index: 1000; /* Garante que fique acima de outros elementos */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-  display: flex; /* Exibe os elementos em linha */
-  align-items: center; /* Alinha verticalmente */
-  padding: 10px; /* Espaçamento interno */
-  margin: 0;
+  display: flex; /* exibe os elementos em linha */
+  align-items: center; /* alinhamento vertical */
+  padding: 10px; /* espaçamento interno */
+  background-color: #ffffff; /* cor de fundo */
+  width: 100%; /* ocupa toda a largura da tela */
+  margin: 0; /* remove margens */
 }
 
-.navebar .logo img {
-  max-height: 80px; /* Ajusta a altura do logo */
-}
+/*.logo {
+ position: absolute;
+ top: 20px; 
+} */
 
 nav {
+  flex: 1; /* ocupa todo o espaço disponível */
+  text-align: right; /* alinhamento do menu a direita */
   margin-right: 70px;
-  flex: 1; /* Ocupa o espaço restante */
-  text-align: right; /* Alinha o menu à direita */
 }
 
 nav ul {
-  list-style: none; /* Remove os marcadores da lista */
-  margin: 0;
-  padding: 0;
-  display: inline-flex; /* Exibe os itens em linha */
-  justify-content: flex-end; /* Alinha os itens à direita */
+  display: inline-block; /* exibe os itens em linha */
   list-style-type: none; /* remove a bolinha da lista */
 }
 
 nav ul li {
-  position: relative; /* Necessário para o dropdown */
-  
+  display: inline-block; /* elementos em linha */
+  margin-right: 20px; /* espaçamento entre elementos */
 }
 
 nav ul li a {
-  text-decoration: none; /* Remove o sublinhado */
-  color: #000; /* Cor do texto */
-  padding: 10px 15px; /* Espaçamento interno */
-  transition: color 0.3s ease; /* Transição suave */
+  text-decoration: none; /* remove o sublinhado do link */
+  color: #000000; /* cor do texto */
 }
 
 nav ul li a:hover {
-  color: #e7cd81; /* Cor ao passar o mouse */
+  color: #e7cd81; /* Define a cor ao passar o mouse sobre o link */
 }
 
 /* Estilo do dropdown */
+.dropdown {
+  position: relative; /* Define a posição relativa para o dropdown */
+  display: inline-block; /* Exibe o item em linha */
+}
+
+.dropbtn {
+  text-decoration: none; /* Remove o sublinhado */
+  color: #000; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno */
+  display: inline-block; /* Exibe o botão em linha */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+}
+
 .dropdown-content {
   display: none; /* Oculta o menu suspenso por padrão */
   position: absolute; /* Posiciona o menu abaixo do botão */
-  background-color: #ffffff; /* Cor de fundo */
+  background-color: #fff; /* Cor de fundo */
   min-width: 150px; /* Largura mínima */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
-  z-index: 1000; /* Garante que fique acima de outros elementos */
-  padding: 10px 0; /* Espaçamento interno */
+  z-index: 1; /* Garante que o menu fique acima de outros elementos */
 }
 
 .dropdown-content li {
-  list-style: none; /* Remove os marcadores */
+  list-style: none; /* Remove os marcadores da lista */
 }
 
 .dropdown-content a {
@@ -111,32 +110,59 @@ nav ul li a:hover {
   color: #e7cd81;
 }
 
-/* Exibe o dropdown ao passar o mouse */
+/* Exibe o menu suspenso ao passar o mouse */
 .dropdown:hover .dropdown-content {
   display: block; /* Exibe o menu suspenso */
+}
+
+/* Estilo do carrinho */
+.cart-icon {
+  position: relative;
+}
+
+.cart {
+  border-radius: 10px; /* Bordas arredondadas */
+  display: none; /* Oculta o carrinho por padrão, ele só será exibido quando necessário */
+  position: absolute; /* Posiciona o carrinho em relação ao elemento pai mais próximo com posição relativa */
+  top: 40px; /* Define a distância do carrinho em relação ao topo do elemento pai */
+  right: 0; /* Alinha o carrinho à direita do elemento pai */
+  border: 1px solid #ddd; /* Adiciona uma borda cinza clara ao redor do carrinho */
+}
+
+.cart h2 {
+  margin: 0 0 10px;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart ul li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
 
 
 /* Estilo para o container do perfil */
 .perfil-container {
-  margin-top: 35px; /* Espaço para garantir que o card fique abaixo da nav */
-  max-width: 600px; /* Largura máxima do card */
+  margin-top: 20px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  background: #f9f9f9; /* Cor de fundo semelhante ao card de contatos */
-  padding: 10px; /* Espaçamento interno */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-  border: 1px solid #ddd; /* Borda leve */
-  margin-top: 130px;
-
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  margin-top: 40px;
 }
 
-.perfil-container h1 {
+.perfil {
+  position: relative;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
 }
 
 .perfil img {
@@ -145,47 +171,72 @@ nav ul li a:hover {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 2px solid #ddd; /* Borda ao redor da imagem */
+  border: 2px solid #ddd;
 }
 
-.perfil .btn {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  background: #ff4081;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+.camera-icon {
+  position: absolute;
+  top: 70px;
+    left: 56%;
+  transform: translateX(-50%);
+  background: #e7cd81;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 14px;
+  border: 2px solid white;
 }
 
-.perfil .btn:hover {
+.camera-icon:hover {
   background: #e73370;
 }
 
-.perfil img {
-  display: block;
-  margin: 0 auto 10px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.camera-icon::before {
+  content: "📷";
+  font-size: 16px;
 }
 
 .perfil .btn {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  background: #ff4081;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  display: block; /* Exibe o botão como bloco */
+  margin: 10px auto; /* Centraliza o botão */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  background: #e7cd81; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto */
+  border: none; /* Remove a borda padrão */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para ponteiro ao passar o mouse */
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+.perfil .btn:hover {
+  background: #e73370; /* Cor de fundo ao passar o mouse */
+}
+
+.perfil img {
+  display: block; /* Exibe a imagem como bloco */
+  margin: 0 auto 10px; /* Margem inferior de 10px */
+  width: 100px; /* Tamanho da imagem */
+  height: 100px; /* Tamanho da imagem */
+  border-radius: 65%; /* Bordas arredondadas */
+}
+/* Estilo para o botão alterar personagem */
+.perfil .btn {
+  display: block; /* Exibe o botão como bloco */
+  margin: 0 auto; /* Centraliza o botão */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  background: #e7cd81; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto */
+  border: none; /* Remove a borda padrão */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para ponteiro ao passar o mouse */
 }
 
 /* Estilo para o formulário */
 form {
-  margin-top: 20px;
+  margin-top: 20px; /* Espaço acima do formulário */
 }
 
 .linha-form {
@@ -234,7 +285,7 @@ form {
 }
 
 .campo:last-child {
-  margin-right: 0; /* Remove o espaço à direita do último campo */
+  margin-right: 10px; /* Remove o espaço à direita do último campo */
 }
 
 
@@ -246,7 +297,7 @@ form {
 
 form label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-weight: bold;
 }
 
@@ -314,3 +365,11 @@ button {
   cursor: pointer;
   border-radius: 4px;
 }
+
+.search-bar input {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+

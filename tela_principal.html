@@ -39,6 +39,11 @@
               <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
             </ul>
           </li>
+          <li class="search-bar">
+            <form action="produtos.html" method="get">
+              <input type="text" name="busca" placeholder="Buscar produtos...">
+            </form>
+          </li>
           <!-- Carrinho -->
           <li class="cart-icon">
             <a href="carrinho.html" onclick="toggleCart()">🛒</a>
@@ -232,12 +237,15 @@
             </form>
           </div>
         </div>
-      </div> <!--Inicio corpo categorias em destaque -->
+      </div>
+      <!--Inicio corpo categorias em destaque -->
     </div>
-  </div>
+
   </div>
 
-   <div id="popup" class="popup hidden">
+  </div>
+
+  <div id="popup" class="popup hidden">
     <div class="popup-content">
       <span class="close" onclick="fecharPopup()">&times;</span>
       <img id="popup-img" src="" alt="Imagem do Produto">
@@ -247,6 +255,7 @@
       <p id="addToCartMessage" class="add-to-cart-message" style="display: none;">Produto adicionado!</p>
       <button class="btn" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
     </div>
+
   </div>
 
   </div>
@@ -368,12 +377,41 @@
     }
   </script>
 
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nomeUsuario = localStorage.getItem("nomeUsuario");
+      if (nomeUsuario) {
+        const nome = nomeUsuario.split(" ")[0];
+        const profileItem = document.querySelector(".profile-icon");
+        profileItem.innerHTML = `<a href="perfil.html">Olá, ${nome}</a>`;
+      }
+    });
+  </script>
+
 </body>
 
 <!--By: Alice &#x2766;-->
 
 </html>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nomeUsuario = localStorage.getItem("nomeUsuario");
+    if (nomeUsuario) {
+      const nome = nomeUsuario.split(" ")[0];
+      const profileItem = document.querySelector(".profile-icon");
+      profileItem.innerHTML = `<a href="perfil.html">Olá, ${nome}</a>`;
+    }
+  });
+</script>
+
 </body>
 
 </html>
+
+<!--Nome do arquivo: tela_principal.html
+Descrição: Página de Home da loja A&A Make.
+Autor: Alice ❦︎
+Data de Finalização: 15/5/2025 -->

@@ -584,3 +584,12 @@ html {
   border-radius: 50%;
   cursor: pointer;
 }
+
+
+.search-bar input {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+

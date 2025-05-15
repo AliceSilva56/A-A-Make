@@ -7,6 +7,15 @@
     <link rel="icon" href="assets/img/Logo.bmp" type="image/png">
     <link rel="stylesheet" href="assets/css/estilo-produtos.css">
     <title>A&A Make Produtos</title>
+
+    <style>
+        .no-results {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,37 +26,42 @@
                 <img src="assets/img/Logo.bmp" alt="Logo" width="90px">
             </div>
 
-             <!-- Menu de navegação -->
-      <nav>
-        <ul id="menuItens">
-          <li><a href="tela_principal.html">Home</a></li>
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="contatos.html">Contato</a></li>
-          <li class="dropdown">
-            <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
-            <ul class="dropdown-content">
-              <li><a href="produtos.html?category=all">Todos</a></li>
-              <li><a href="produtos.html?category=rosto">Rosto</a></li>
-              <li><a href="produtos.html?category=olhos">Olhos</a></li>
-              <li><a href="produtos.html?category=labios">Lábios</a></li>
-              <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
-            </ul>
-          </li>
-          <!-- Carrinho -->
-          <li class="cart-icon">
-            <a href="carrinho.html" onclick="toggleCart()">🛒</a>
-            <div id="cart" class="cart">
-              <ul id="cartItems"></ul>
-            </div>
-          </li>
-          <!-- Bolinha de perfil -->
-          <li class="profile-icon">
-            <a href="perfil.html" onclick="abrirBarraLateral()">
-              <img src="assets/img/default-profile.png" alt="Perfil" class="profile-img">
-            </a>
-          </li>
-        </ul>
-      </nav>
+            <!-- Menu de navegação -->
+            <nav>
+                <ul id="menuItens">
+                    <li><a href="tela_principal.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li class="dropdown">
+                        <a href="produtos.html" class="dropbtn">Categorias &#x2228;</a>
+                        <ul class="dropdown-content">
+                            <li><a href="produtos.html?">Todos</a></li>
+                            <li><a href="produtos.html?category=rosto">Rosto</a></li>
+                            <li><a href="produtos.html?category=olhos">Olhos</a></li>
+                            <li><a href="produtos.html?category=labios">Lábios</a></li>
+                            <li><a href="produtos.html?category=acessorios">Acessórios</a></li>
+                        </ul>
+                    </li>
+                    <li class="search-bar">
+                        <form action="produtos.html" method="get">
+                            <input type="text" name="busca" placeholder="Buscar produtos...">
+                        </form>
+                    </li>
+                    <!-- Carrinho -->
+                    <li class="cart-icon">
+                        <a href="carrinho.html" onclick="toggleCart()">🛒</a>
+                        <div id="cart" class="cart">
+                            <ul id="cartItems"></ul>
+                        </div>
+                    </li>
+                    <!-- Bolinha de perfil -->
+                    <li class="profile-icon">
+                        <a href="perfil.html" onclick="abrirBarraLateral()">
+                            <img src="assets/img/default-profile.png" alt="Perfil" class="profile-img">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
         <div class="container">
@@ -179,6 +193,7 @@
                 </div>
                 <img src="assets/img/iluminador-rosto2.png" alt="OutraImagem">
             </div>
+
             <!-- Produto 8 Categoria Rosto-->
             <div data-category="rosto" class="product" onclick="openPopup(7)">
                 <img src="assets/img/corretivo-rosto.png" alt="Corretivo">
@@ -215,7 +230,7 @@
                 <img src="assets/img/fixador-maquiagem2.png" alt="OutraImagem">
             </div>
 
-            <!-- Produto 10 CategoriaRosto-->
+            <!-- Produto 10 Categoria Rosto-->
             <div data-category="rosto" class="product" onclick="openPopup(9)">
                 <img src="assets/img/contorno-rosto.png" alt="Paleta de Contorno">
                 <div class="product-info">
@@ -501,7 +516,6 @@
             </div>
 
             <!-- Produto 5 Categoria Lábios-->
-
             <div data-category="labios" class="product" onclick="openPopup(24)">
                 <img src="assets/img/gloss-e-lápis-de-boca-labios.png" alt="Lápis para Olhos">
                 <div class="product-info">
@@ -520,7 +534,6 @@
             </div>
 
             <!-- Produto 6 Categoria Lábios-->
-
             <div data-category="labios" class="product" onclick="openPopup(25)">
                 <img src="assets/img/Batom Hidratante-labios.png" alt="Lápis para Olhos">
                 <div class="product-info">
@@ -539,7 +552,6 @@
             </div>
 
             <!-- Produto 7 Categoria Lábios-->
-
             <div data-category="labios" class="product" onclick="openPopup(26)">
                 <img src="assets/img/Gloss-Labial-Glow-labios.png" alt="Lápis para Olhos">
                 <div class="product-info">
@@ -558,7 +570,6 @@
             </div>
 
             <!-- Produto 8 Categoria Lábios-->
-
             <div data-category="labios" class="product" onclick="openPopup(27)">
                 <img src="assets/img/Duo-BatomeLápis-de-Boca-labios.png" alt="Lápis para Olhos">
                 <div class="product-info">
@@ -577,7 +588,6 @@
             </div>
 
             <!-- Produto 9 Categoria Lábios-->
-
             <div data-category="labios" class="product" onclick="openPopup(28)">
                 <img src="assets/img/Lip-GlossELip-Liner-labios.png" alt="Lápis para Olhos">
                 <div class="product-info">
@@ -589,7 +599,6 @@
             </div>
 
             <!-- Produto 10 Categoria Lábios-->
-
             <div data-category="labios" class="product" onclick="openPopup(29)">
                 <img src="assets/img/NIVEA-Hidratante-LabialeSheglam-labios.png" alt="Lápis para Olhos">
                 <div class="product-info">
@@ -804,7 +813,7 @@
         </div>
 
         <!-- Pop-up para descrição do produto -->
-              <div id="productPopup" class="popup">
+        <div id="productPopup" class="popup">
             <div class="popup-content">
                 <span class="close-btn" onclick="closePopup()">&times;</span>
                 <h2 id="popupTitle">Título do Produto</h2>
@@ -818,6 +827,80 @@
         </div>
 
 
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // 1. Captura o termo de busca da URL
+                const params = new URLSearchParams(window.location.search);
+                const termo = (params.get("busca") || "").trim().toLowerCase();
+
+                // 2. Seleciona todos os produtos e o container principal
+                const produtos = document.querySelectorAll(".product");
+                const container = document.querySelector(".container");
+                let encontrados = 0;
+
+                // 3. Filtra cada produto
+                produtos.forEach(prod => {
+                    const nome = prod.querySelector(".product-info h3")
+                        .textContent
+                        .toLowerCase();
+                    if (!termo || nome.includes(termo)) {
+                        prod.style.display = "";    // mostra
+                        encontrados++;
+                    } else {
+                        prod.style.display = "none"; // esconde
+                    }
+                });
+
+                // 4. Se nada encontrado, exibe mensagem
+                if (termo && encontrados === 0) {
+                    const msg = document.createElement("p");
+                    msg.className = "no-results";
+                    msg.textContent = `Nenhum produto encontrado para "${termo}".`;
+                    container.appendChild(msg);
+                }
+
+                // 5. Repõe o termo no campo de busca
+                const inputBusca = document.querySelector('.search-bar input[name="busca"]');
+                if (inputBusca) inputBusca.value = termo;
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // 1. Captura o termo de busca da URL
+                const params = new URLSearchParams(window.location.search);
+                const termo = (params.get("busca") || "").trim().toLowerCase();
+
+                // 2. Seleciona todos os produtos e o container principal
+                const produtos = document.querySelectorAll(".product");
+                const container = document.querySelector(".container");
+                let encontrados = 0;
+
+                // 3. Filtra cada produto
+                produtos.forEach(prod => {
+                    const nome = prod.querySelector(".product-info h3")
+                        .textContent
+                        .toLowerCase();
+                    if (!termo || nome.includes(termo)) {
+                        prod.style.display = "";    // mostra
+                        encontrados++;
+                    } else {
+                        prod.style.display = "none"; // esconde
+                    }
+                });
+
+                // 4. Se nada encontrado, exibe mensagem
+                if (termo && encontrados === 0) {
+                    const msg = document.createElement("p");
+                    msg.className = "no-results";
+                    msg.textContent = `Nenhum produto encontrado para "${termo}".`;
+                    container.appendChild(msg);
+                }
+
+                // 5. Repõe o termo no campo de busca
+                const inputBusca = document.querySelector('.search-bar input[name="busca"]');
+                if (inputBusca) inputBusca.value = termo;
+            });
+        </script>
 
         <script>
             // Alterna a exibição do menu suspenso ao clicar no botão
@@ -1146,33 +1229,33 @@
                 document.querySelector(".container").classList.remove("blur");
             }
 
-                                          // Função para adicionar um produto ao carrinho
-                    function addToCart() {
-                        const title = document.getElementById("popupTitle").textContent;
-                        const priceText = document.getElementById("popupPrice").textContent;
-                        const price = parseFloat(priceText.replace("Preço: R$ ", "").replace(",", "."));
-                        const image = document.getElementById("popupImage").src;
-                    
-                        // Recupera o carrinho do Local Storage ou inicializa como um array vazio
-                        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                    
-                        // Adiciona o produto ao carrinho
-                        cart.push({ name: title, price: price, image: image });
-                    
-                        // Salva o carrinho atualizado no Local Storage
-                        localStorage.setItem("cart", JSON.stringify(cart));
-                    
-                        // Exibe a mensagem no pop-up
-                        const addToCartMessage = document.getElementById("addToCartMessage");
-                        addToCartMessage.textContent = `Produto "${title}" adicionado ao carrinho!`;
-                        addToCartMessage.style.display = "block";
-                    
-                        // Oculta a mensagem e fecha o pop-up após 1,5 segundos
-                        setTimeout(() => {
-                            addToCartMessage.style.display = "none"; // Oculta a mensagem
-                            closePopup(); // Fecha o pop-up
-                        }, 1000); // 1000ms = 1 segundos
-                    }
+            // Função para adicionar um produto ao carrinho
+            function addToCart() {
+                const title = document.getElementById("popupTitle").textContent;
+                const priceText = document.getElementById("popupPrice").textContent;
+                const price = parseFloat(priceText.replace("Preço: R$ ", "").replace(",", "."));
+                const image = document.getElementById("popupImage").src;
+
+                // Recupera o carrinho do Local Storage ou inicializa como um array vazio
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Adiciona o produto ao carrinho
+                cart.push({ name: title, price: price, image: image });
+
+                // Salva o carrinho atualizado no Local Storage
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                // Exibe a mensagem no pop-up
+                const addToCartMessage = document.getElementById("addToCartMessage");
+                addToCartMessage.textContent = `Produto "${title}" adicionado ao carrinho!`;
+                addToCartMessage.style.display = "block";
+
+                // Oculta a mensagem e fecha o pop-up após 1,5 segundos
+                setTimeout(() => {
+                    addToCartMessage.style.display = "none"; // Oculta a mensagem
+                    closePopup(); // Fecha o pop-up
+                }, 1000); // 1000ms = 1 segundos
+            }
 
             // Função para filtrar produtos por categoria
             function filterProducts(category) {
@@ -1219,9 +1302,27 @@
             if (category) {
                 filterProducts(category);
             }
+
+
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const nomeUsuario = localStorage.getItem("nomeUsuario");
+                if (nomeUsuario) {
+                    const nome = nomeUsuario.split(" ")[0];
+                    const profileItem = document.querySelector(".profile-icon");
+                    profileItem.innerHTML = `<a href="perfil.html">Olá, ${nome}</a>`;
+                }
+            });
         </script>
 
     </div>
 </body>
 
 </html>
+
+<!--
+    Nome do arquivo: produtos.html
+    Descrição: Página de produtos da loja A&A Make, com categorias e produtos disponíveis.
+Autor: Alice ❦︎
+    Data de Finalização: 15/5/2025 -->
